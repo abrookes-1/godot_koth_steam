@@ -9,5 +9,5 @@
 - direct link: https://github.com/godotengine/godot/archive/3.1.2-stable.tar.gz
 2. download godotsteam for 3.1 from https://gramps.github.io/GodotSteam/index.html
 - direct link: https://github.com/Gramps/GodotSteam/zipball/master
-3. move godotsteam into modeules as in section "quick-howto" here https://github.com/Gramps/GodotSteam
+3. move godotsteam into modules as in section "quick-howto" here https://github.com/Gramps/GodotSteam
 4. open command prompt in godot source location and compile with `scons use_mingw=yes platform=windows`
