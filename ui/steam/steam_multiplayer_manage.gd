@@ -1,6 +1,3 @@
-extends Control
-
-
 #var STEAM_ID = Steam.getSteamID()
 #var STEAM_USERNAME = ""
 #var STEAM_LOBBY_ID = 0
@@ -346,5 +343,5 @@ extends Control
 #
 #
 #
-
-
+#
+#
