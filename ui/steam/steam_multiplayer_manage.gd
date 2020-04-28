@@ -30,15 +30,15 @@ func _ready():
 
 	Steam.connect("lobby_created", self, "_on_Lobby_Created")
 	Steam.connect("lobby_match_list", self, "_on_Lobby_Match_List")
-#	Steam.connect("lobby_joined", self, "_on_Lobby_Joined")
+	Steam.connect("lobby_joined", self, "_on_Lobby_Joined")
 	Steam.connect("lobby_chat_update", self, "_on_Lobby_Chat_Update")
 	Steam.connect("lobby_message", self, "_on_Lobby_Message")
-#	Steam.connect("lobby_data_update", self, "_on_Lobby_Data_Update")
+	Steam.connect("lobby_data_update", self, "_on_Lobby_Data_Update")
 	Steam.connect("lobby_invite", self, "_on_Lobby_Invite")
 	Steam.connect("join_requested", self, "_on_Lobby_Join_Requested")
 	Steam.connect("p2p_session_request", self, "_on_P2P_Session_Request")
 	Steam.connect("p2p_session_connect_fail", self, "_on_P2P_Session_Connect_Fail")
-	# Check for command line arguments
+	#Check for command line arguments
 	_check_Command_Line()
 
 
@@ -58,11 +58,17 @@ func _ready():
 		get_tree().quit()
 	
 	ONLINE = Steam.loggedOn()
-	#STEAM_ID = Steam.getSteamID()
+	STEAM_ID = Steam.getSteamID()
 	OWNED = Steam.isSubscribed()
-	
 
-#
+
+
+
+
+
+
+
+
 func _process(delta):
 	Steam.run_callbacks()
 	_read_P2P_Packet()
