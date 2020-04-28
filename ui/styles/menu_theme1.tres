@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=6 format=2]
 
-[ext_resource path="res://assets/fonts/menu_main_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/menu_title_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ui/styles/tab_inactive_style.tres" type="StyleBox" id=2]
 [ext_resource path="res://ui/styles/tab_active_style.tres" type="StyleBox" id=3]
-[ext_resource path="res://assets/fonts/menu_title_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/fonts/menu_main_font.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 content_margin_left = 20.0
@@ -12,7 +12,7 @@ content_margin_top = 30.0
 content_margin_bottom = 10.0
 
 [resource]
-default_font = ExtResource( 1 )
+default_font = ExtResource( 4 )
 MenuButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 MenuButton/colors/font_color_disabled = Color( 1, 1, 1, 0.3 )
 MenuButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
@@ -33,7 +33,7 @@ TabContainer/constants/label_valign_bg = 2
 TabContainer/constants/label_valign_fg = 0
 TabContainer/constants/side_margin = 8
 TabContainer/constants/top_margin = 24
-TabContainer/fonts/font = ExtResource( 4 )
+TabContainer/fonts/font = ExtResource( 1 )
 TabContainer/icons/decrement = null
 TabContainer/icons/decrement_highlight = null
 TabContainer/icons/increment = null

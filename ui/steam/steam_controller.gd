@@ -11,6 +11,11 @@ var DATA
 var LOBBY_INVITE_ARG = false
 
 func _ready():
+	# connect buttons
+	var create_lobby_button = $"../MainMenu/EdgeScreenPadding/TabContainer/Game/GraphicsList/Host/Host"
+	create_lobby_button.connect("pressed", self, "_create_Lobby")
+	print("connected-------")
+	
 	Steam.connect("lobby_created", self, "_on_Lobby_Created")
 	Steam.connect("lobby_match_list", self, "_on_Lobby_Match_List")
 	Steam.connect("lobby_joined", self, "_on_Lobby_Joined")
