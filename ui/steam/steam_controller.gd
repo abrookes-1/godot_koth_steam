@@ -1,33 +1,16 @@
-extends MarginContainer
-
-
-
-
-
-
-
-
-
-
+extends Node
 
 # Steam variables
 var OWNED = false
 var ONLINE = false
-var STEAM_ID = 0
-
-
-
-
-
-
+var STEAM_ID = Steam.getSteamID()
+var STEAM_USERNAME = ""
+var STEAM_LOBBY_ID = 0
+var LOBBY_MEMBERS = []
+var DATA
+var LOBBY_INVITE_ARG = false
 
 func _ready():
-
-
-
-
-
-
 	Steam.connect("lobby_created", self, "_on_Lobby_Created")
 	Steam.connect("lobby_match_list", self, "_on_Lobby_Match_List")
 	Steam.connect("lobby_joined", self, "_on_Lobby_Joined")
@@ -41,15 +24,6 @@ func _ready():
 	#Check for command line arguments
 	_check_Command_Line()
 
-
-
-
-
-
-
-
-
-
 	var INIT = Steam.steamInit()
 	print("Did Steam initialize?: "+str(INIT))
 	
@@ -62,47 +36,13 @@ func _ready():
 	OWNED = Steam.isSubscribed()
 
 
-
-
-
-
-
-
-
 func _process(delta):
 	Steam.run_callbacks()
 	_read_P2P_Packet()
 
-
-
-
-
-
-
-
-
-
-
-var STEAM_USERNAME = ""
-var STEAM_LOBBY_ID = 0
-var LOBBY_MEMBERS = []
-var DATA
-var LOBBY_INVITE_ARG = false
-
-
-
-
-
-
-
-
 func _on_Host_pressed():
 	print("asdas")
 	_create_Lobby()
-
-
-
-
 
 func _check_Command_Line():
 	var ARGUMENTS = OS.get_cmdline_args()
@@ -121,9 +61,6 @@ func _check_Command_Line():
 			# A Steam connection argument exists
 			if ARGUMENT == "+connect_lobby":
 				LOBBY_INVITE_ARG = true
-
-
-
 
 func _create_Lobby():
 	# Make sure a lobby is not already set

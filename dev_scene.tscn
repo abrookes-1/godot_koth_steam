@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/materials/shaders/misc/blur.shader" type="Shader" id=1]
+[ext_resource path="res://ui/menus/esc_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/steam/steam_controller.gd" type="Script" id=3]
+[ext_resource path="res://ui/menus/main_menu.tscn" type="PackedScene" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/amount = 3.881
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/amount = 3.881
+
+[node name="Game" type="Node"]
+
+[node name="MainMenu" parent="." instance=ExtResource( 4 )]
+material = SubResource( 1 )
+
+[node name="EscapeMenu" parent="." instance=ExtResource( 2 )]
+visible = false
+material = SubResource( 2 )
+
+[node name="SteamController" type="Node" parent="."]
+script = ExtResource( 3 )
