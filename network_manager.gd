@@ -1,6 +1,6 @@
 extends Node
 
-var is_host = true
+var is_host = false
 var net_nodes = []
 
 onready var steam_controller = $"/root/SteamController"
@@ -13,11 +13,13 @@ func _ready():
 
 func _physics_process(delta):
 	if is_host:
+		print("host")
 		#_process_client_updates()
 		#_send_updates()
 		pass
 	else:
 		_process_server_updates()
+		print("member")
 		
 
 func _process_client_updates():

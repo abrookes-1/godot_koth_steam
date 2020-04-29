@@ -134,7 +134,6 @@ func _join_Lobby(lobbyID):
 	Steam.joinLobby(lobbyID)
 
 func _on_Lobby_Joined(lobbyID, permissions, locked, response):
-	NetworkManager.is_host = false
 	# Set this lobby ID as your lobby ID
 	STEAM_LOBBY_ID = lobbyID
 	
