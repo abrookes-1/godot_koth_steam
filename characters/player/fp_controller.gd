@@ -16,8 +16,12 @@ const ACCEL = 2
 const DECEL = 6
 var jump_height = 15
 
+var net_id
+
 func _ready():
-	pass
+	net_id = 1
+	print("new player ready: " + str(net_id))
+	
 
 func _process(delta):
 	_walk(delta)
@@ -96,3 +100,6 @@ func _fly(delta):
 	velocity = velocity.linear_interpolate(target, FLY_ACCEL * delta)
 	
 	move_and_slide(velocity)
+
+func set_pos(vec):
+	self.to_global(vec)

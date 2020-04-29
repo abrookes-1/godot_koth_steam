@@ -19,6 +19,11 @@ config/name="godot_steam"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+NetworkManager="*res://network_manager.gd"
+SteamController="*res://ui/steam/steam_controller.gd"
+
 [display]
 
 window/size/width=1920

@@ -10,10 +10,12 @@ var LOBBY_MEMBERS = []
 var DATA
 var LOBBY_INVITE_ARG = false
 
+onready var network_manager = $"/root/NetworkManager"
+
 func _ready():
 	# connect buttons
-	var create_lobby_button = $"../MainMenu/EdgeScreenPadding/TabContainer/Game/GraphicsList/Host/Host"
-	create_lobby_button.connect("pressed", self, "_create_Lobby")
+	#var create_lobby_button = $"../MainMenu/EdgeScreenPadding/TabContainer/Game/GraphicsList/Host/Host"
+	#create_lobby_button.connect("pressed", self, "_create_Lobby")
 	print("connected-------")
 	
 	Steam.connect("lobby_created", self, "_on_Lobby_Created")
@@ -73,25 +75,26 @@ func _create_Lobby():
 		Steam.createLobby(2, 2)
 
 func _on_Lobby_Created(connect, lobbyID):
-	print("1")
+	NetworkManager.is_host = true
+#	print("1")
 	if connect == 1:
-		print("2")
+#		print("2")
 		# Set the lobby ID
 		STEAM_LOBBY_ID = lobbyID
-		print("3")
+#		print("3")
 		print("Created a lobby: "+str(STEAM_LOBBY_ID))
-		print("4")
+#		print("4")
 
 		# Set some lobby data
-		print("5")
+#		print("5")
 		Steam.setLobbyData(lobbyID, "name", "Gramps' Lobby")
-		print("6")
+#		print("6")
 		Steam.setLobbyData(lobbyID, "mode", "GodotSteam test")
 
 		# Allow P2P connections to fallback to being relayed through Steam if needed
-		print("7")
+#		print("7")
 		var RELAY = Steam.allowP2PPacketRelay(true)
-		print("8")
+#		print("8")
 		print("Allowing Steam to be relay backup: "+str(RELAY))
 
 func _on_Open_Lobby_List_pressed():
@@ -131,7 +134,7 @@ func _join_Lobby(lobbyID):
 	Steam.joinLobby(lobbyID)
 
 func _on_Lobby_Joined(lobbyID, permissions, locked, response):
-	
+	NetworkManager.is_host = false
 	# Set this lobby ID as your lobby ID
 	STEAM_LOBBY_ID = lobbyID
 	
@@ -140,6 +143,8 @@ func _on_Lobby_Joined(lobbyID, permissions, locked, response):
 	
 	# Make the initial handshake
 	_make_P2P_Handshake()
+	
+	NetworkManager.initialize_client()
 
 func _on_Lobby_Join_Requested(lobbyID, friendID):
 	
@@ -276,7 +281,7 @@ func _read_P2P_Packet():
 
 		# Print the packet to output
 		print("Packet: "+str(READABLE))
-
+		return PACKET.data
 		# Append logic here to deal with packet data
 
 
