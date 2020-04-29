@@ -27,8 +27,9 @@ func _process_client_updates():
 func _process_server_updates():
 	# get updates from server
 	var p = steam_controller._read_P2P_Packet()
-	if p.data:
+	if p:
 		print(p.data)
+
 
 func net_node_spawn(Node):
 	pass
