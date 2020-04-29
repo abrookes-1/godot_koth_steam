@@ -27,8 +27,9 @@ func _ready():
 
 func _process(delta):
 	_walk(delta)
+	
+func _physics_process(delta):
 	network_manager.send_state(self)
-
 
 func _input(event):
 	if event is InputEventMouseMotion:
