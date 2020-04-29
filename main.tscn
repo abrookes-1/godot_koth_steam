@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://levels/obstacle_course/obstacle_course.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/lobby_buttons.gd" type="Script" id=3]
+[ext_resource path="res://packet_manager/packet_manager.gd" type="Script" id=4]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -40,5 +41,8 @@ text = "join"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 4 )
 [connection signal="pressed" from="Control/Create" to="Control" method="_on_create_pressed"]
 [connection signal="pressed" from="Control/Join" to="Control" method="_on_join_pressed"]
