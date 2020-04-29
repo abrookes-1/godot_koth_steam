@@ -30,6 +30,7 @@ func _process_server_updates():
 	# get updates from server
 	var p = steam_controller._read_P2P_Packet()
 	if p:
+		print("test")
 		print(p.data)
 
 
@@ -46,4 +47,6 @@ func add_networked_node(node):
 	net_nodes.append(node)
 
 func send_state(node):
-	steam_controller._send_P2P_Packet(str(node.net_id), 2, 0)
+	steam_controller._send_P2P_Packet(str("ereeeeeeeeeeeeee"), 2, 0)
+	
+

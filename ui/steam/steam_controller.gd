@@ -3,7 +3,7 @@ extends Node
 # Steam variables
 var OWNED = false
 var ONLINE = false
-var STEAM_ID = Steam.getSteamID()
+var STEAM_ID
 var STEAM_USERNAME = ""
 var STEAM_LOBBY_ID = 0
 var LOBBY_MEMBERS = []
@@ -162,6 +162,7 @@ func _get_Lobby_Members():
 	# Get the number of members from this lobby from Steam
 	var MEMBERS = Steam.getNumLobbyMembers(STEAM_LOBBY_ID)
 
+
 	# Get the data of these players from Steam
 	for MEMBER in range(0, MEMBERS):
 
@@ -172,7 +173,7 @@ func _get_Lobby_Members():
 		var MEMBER_STEAM_NAME = Steam.getFriendPersonaName(MEMBER_STEAM_ID)
 
 		# Add them to the list
-		#LOBBY_MEMBERS.append({"steam_id":steam_id, "steam_name":steam_name})
+		LOBBY_MEMBERS.append({"steam_id":MEMBER_STEAM_ID, "steam_name":MEMBER_STEAM_ID})
 
 
 func _make_P2P_Handshake():
@@ -210,6 +211,8 @@ func _on_Lobby_Chat_Update(lobbyID, changedID, makingChangeID, chatState):
 
 	# Update the lobby now that a change has occurred
 	_get_Lobby_Members()
+	print(LOBBY_MEMBERS)
+
 
 func _on_Send_Chat_pressed():
 
