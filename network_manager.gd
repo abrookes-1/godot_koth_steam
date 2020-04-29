@@ -46,4 +46,4 @@ func add_networked_node(node):
 	net_nodes.append(node)
 
 func send_state(node):
-	steam_controller._send_P2P_Packet(str(node.id))
+	steam_controller._send_P2P_Packet(str(node.net_id), 2, 0)

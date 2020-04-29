@@ -105,4 +105,5 @@ func _fly(delta):
 	move_and_slide(velocity)
 
 func set_pos(vec):
-	self.to_global(vec)
+	#self.to_global(vec)
+	pass

@@ -324,8 +324,8 @@ func _on_P2P_Session_Connect_Fail(lobbyID, session_error):
 	else:
 		print("WARNING: Session failure with "+str(lobbyID)+" [unknown error "+str(session_error)+"].")
 
-
-
+func _on_Lobby_Data_Update(success, lobbyID, memberID, key):
+	print("Success: "+str(success)+", Lobby ID: "+str(lobbyID)+", Member ID: "+str(memberID)+", Key: "+str(key))
 
 
 
