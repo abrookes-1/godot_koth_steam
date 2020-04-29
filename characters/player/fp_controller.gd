@@ -19,7 +19,7 @@ var jump_height = 15
 func _ready():
 	pass
 
-func _physics_process(delta):
+func _process(delta):
 	_walk(delta)
 
 
