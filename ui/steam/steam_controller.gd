@@ -45,7 +45,7 @@ func _ready():
 
 func _process(delta):
 	Steam.run_callbacks()
-	_read_P2P_Packet()
+	#_read_P2P_Packet()
 
 
 func _on_Host_pressed():
@@ -290,7 +290,6 @@ func _send_P2P_Packet(data, send_type, channel):
 		for MEMBER in LOBBY_MEMBERS:
 			if MEMBER['steam_id'] != STEAM_ID:
 				Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel)
-				print("sent")
 
 func _on_P2P_Session_Connect_Fail(lobbyID, session_error):
 

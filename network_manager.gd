@@ -74,7 +74,7 @@ func send_position(node):
 	}
 	DATA.append(256)
 	DATA.append_array(var2bytes(d))
-	steam_controller._send_P2P_Packet(DATA, 2, 0)
+	steam_controller._send_P2P_Packet(DATA, 1, 0)
 	
 func do_position_directive(data):
 	pass

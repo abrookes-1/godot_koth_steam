@@ -30,12 +30,8 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	if network_manager.is_host:
-		if temp > 10:
-			temp = 0
-			network_manager.send_position(self)
-		temp += delta
-	
+	network_manager.send_position(self)
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -85,7 +81,7 @@ func _walk(delta):
 	
 	velocity.x = temp_velocity.x
 	velocity.z = temp_velocity.z
-	
+
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 
 	if Input.is_action_just_pressed("move_jump"):
@@ -112,4 +108,4 @@ func _fly(delta):
 	move_and_slide(velocity)
 
 func set_pos(vec):
-	self.global_translate(vec)
+	self.translation = vec
