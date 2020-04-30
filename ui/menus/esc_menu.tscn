@@ -64,46 +64,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Host" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_right = 1760.0
-margin_bottom = 57.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Host" type="Button" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Host"]
-margin_right = 1760.0
-margin_bottom = 57.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Host"
-
 [node name="Abaondon" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 61.0
 margin_right = 1760.0
-margin_bottom = 118.0
+margin_bottom = 36.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Abaondon"]
 margin_right = 1760.0
-margin_bottom = 57.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Abandon"
 
 [node name="Surrender" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 122.0
+margin_top = 40.0
 margin_right = 1760.0
-margin_bottom = 179.0
+margin_bottom = 76.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Surrender"]
 margin_right = 1760.0
-margin_bottom = 57.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Surrender"

@@ -14,7 +14,7 @@ const MAX_SPEED = 20
 const MAX_RUNNING_SPEED = 30
 const ACCEL = 2
 const DECEL = 20
-const AIR_DECEL = 0.3
+const AIR_ACCEL = 0.5
 var jump_height = 15
 var temp = 0
 
@@ -99,13 +99,12 @@ func _walk(delta):
 	
 	# determine if accelerating or decelerating
 	var acceleration
-	if direction.dot(temp_velocity) > 0:
+	if !has_contact:
+		acceleration = AIR_ACCEL
+	elif direction.dot(temp_velocity) > 0:
 		acceleration = ACCEL
 	else:
-		if has_contact:
-			acceleration = DECEL
-		else:
-			acceleration = AIR_DECEL
+		acceleration = DECEL
 	
 	temp_velocity = temp_velocity.linear_interpolate(target, acceleration * delta)
 	

@@ -167,7 +167,7 @@ func _get_Lobby_Members():
 		var MEMBER_STEAM_NAME = Steam.getFriendPersonaName(MEMBER_STEAM_ID)
 
 		# Add them to the list
-		LOBBY_MEMBERS.append({"steam_id":MEMBER_STEAM_ID, "steam_name":MEMBER_STEAM_ID})
+		LOBBY_MEMBERS.append({"steam_id":MEMBER_STEAM_ID, "steam_name":MEMBER_STEAM_NAME})
 
 
 func _make_P2P_Handshake():
