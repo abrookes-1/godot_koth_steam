@@ -35,6 +35,7 @@ func _ready():
 	is_owner = steam_id == steam_controller.STEAM_ID
 	if is_owner:
 		get_node('Head/Camera').make_current()
+		$'Head/Camera/char'.set_visible(false)
 
 func _process(delta):
 	if is_owner:
