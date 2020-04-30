@@ -29,16 +29,20 @@ const MAX_SLOPE_ANGLE = 35
 
 onready var network_manager = $"/root/NetworkManager"
 onready var steam_controller = $"/root/SteamController"
-onready var sniper = $"Head/Camera/sniper"
+onready var weapon = $"Head/Camera/Sniper"
+onready var player_mesh = $"Head/Camera/PlayerMainMesh"
+onready var player_cam = $'Head/Camera'
 
 func _ready():
-	print("new player ready: " + str(net_id))
+#	print("new player ready: " + str(net_id))
 	steam_id = spawn_params['steam_id']
 	steam_name = spawn_params['steam_name']
 	is_owner = steam_id == steam_controller.STEAM_ID
+	
+	# settings for user's player model
 	if is_owner:
-		get_node('Head/Camera').make_current()
-		$'Head/Camera/char'.set_visible(false)
+		player_cam.make_current()
+		player_mesh.set_visible(false)
 
 func _process(delta):
 	if is_owner:
@@ -64,7 +68,7 @@ func _input(event):
 			
 	if event is InputEventMouseButton:
 		if event.is_action_pressed("shoot"):
-			sniper.fire_weapon()
+			weapon.fire_weapon()
 
 
 

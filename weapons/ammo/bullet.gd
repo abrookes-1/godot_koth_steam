@@ -1,23 +1,33 @@
-extends Spatial
+extends KinematicBody
 
-var BULLET_SPEED = 70
+var BULLET_SPEED = 20
 var BULLET_DAMAGE = 15
-const KILL_TIMER = 4
+const KILL_TIMER = 6
 var timer = 0
 var hit_something = false
-var forward_dir
+#var forward_dir
+var velocity = Vector3()
+var gravity = -9.8
 
 func _ready():
-	pass
+	velocity = -transform.basis.z * BULLET_SPEED
 
 func _physics_process(delta):
-	
-	global_translate(forward_dir * BULLET_SPEED * delta)
-
 	timer += delta
 	if timer >= KILL_TIMER:
 		queue_free()
-
+	
+	
+	# velocity.y += gravity
+	
+	
+	var collision = move_and_collide(velocity * delta)
+	
+#	if collision:
+#		var collided_with = collision.collider as StaticBody
+#
+#		if collided_with.is_in_group('shootable'):
+#			print('ded')
 
 func collided(body):
 	if hit_something == false:
