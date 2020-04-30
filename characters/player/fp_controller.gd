@@ -10,11 +10,11 @@ const FLY_SPEED = 40
 const FLY_ACCEL = 4
 
 var gravity = -9.8 * 3
-const MAX_SPEED = 20
-const MAX_RUNNING_SPEED = 30
+const MAX_SPEED = 15
+const MAX_RUNNING_SPEED = 20
 const ACCEL = 2
 const DECEL = 20
-const AIR_ACCEL = 0.5
+const AIR_ACCEL = 1
 var jump_height = 15
 var temp = 0
 
