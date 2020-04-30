@@ -1,13 +1,13 @@
 extends KinematicBody
 
-var BULLET_SPEED = 20
+var BULLET_SPEED = 100
 var BULLET_DAMAGE = 15
 const KILL_TIMER = 6
 var timer = 0
 var hit_something = false
 #var forward_dir
 var velocity = Vector3()
-var gravity = -9.8
+var gravity = -9.8 * 0.01
 
 func _ready():
 	velocity = -transform.basis.z * BULLET_SPEED
@@ -18,12 +18,13 @@ func _physics_process(delta):
 		queue_free()
 	
 	
-	# velocity.y += gravity
+	velocity.y += gravity
 	
 	
 	var collision = move_and_collide(velocity * delta)
 	
 #	if collision:
+#		velocity = Vector3.ZERO
 #		var collided_with = collision.collider as StaticBody
 #
 #		if collided_with.is_in_group('shootable'):
