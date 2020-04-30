@@ -32,7 +32,6 @@ __meta__ = {
 }
 
 [node name="Join" type="Button" parent="Control"]
-visible = false
 margin_left = 65.0304
 margin_top = 3.23534
 margin_right = 101.03

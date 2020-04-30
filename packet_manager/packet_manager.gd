@@ -10,3 +10,4 @@ func _ready():
 	"position": player_position
   }
 }
+

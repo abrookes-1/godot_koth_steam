@@ -76,25 +76,18 @@ func _create_Lobby():
 
 func _on_Lobby_Created(connect, lobbyID):
 	NetworkManager.is_host = true
-#	print("1")
+	
 	if connect == 1:
-#		print("2")
 		# Set the lobby ID
 		STEAM_LOBBY_ID = lobbyID
-#		print("3")
 		print("Created a lobby: "+str(STEAM_LOBBY_ID))
-#		print("4")
 
 		# Set some lobby data
-#		print("5")
 		Steam.setLobbyData(lobbyID, "name", "Gramps' Lobby")
-#		print("6")
 		Steam.setLobbyData(lobbyID, "mode", "GodotSteam test")
 
 		# Allow P2P connections to fallback to being relayed through Steam if needed
-#		print("7")
 		var RELAY = Steam.allowP2PPacketRelay(true)
-#		print("8")
 		print("Allowing Steam to be relay backup: "+str(RELAY))
 
 func _on_Open_Lobby_List_pressed():
@@ -143,7 +136,7 @@ func _on_Lobby_Joined(lobbyID, permissions, locked, response):
 	# Make the initial handshake
 	_make_P2P_Handshake()
 	
-	NetworkManager.initialize_client()
+	
 
 func _on_Lobby_Join_Requested(lobbyID, friendID):
 	
@@ -296,6 +289,7 @@ func _send_P2P_Packet(data, send_type, channel):
 		for MEMBER in LOBBY_MEMBERS:
 			if MEMBER['steam_id'] != STEAM_ID:
 				Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel)
+				print("sent")
 
 func _on_P2P_Session_Connect_Fail(lobbyID, session_error):
 
