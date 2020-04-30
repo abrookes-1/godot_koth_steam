@@ -22,3 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14027, 0 )
 transform = Transform( 0.636302, 0, 0, 0, -1.71564e-07, -1.05305, 0, 0.554667, -9.03669e-08, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="FeetCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.772127, 0 )
+enabled = true

@@ -22,6 +22,8 @@ var net_id
 var steam_id
 var steam_name
 var is_owner
+var has_contact = false
+const MAX_SLOPE_ANGLE = 35
 
 onready var network_manager = $"/root/NetworkManager"
 onready var steam_controller = $"/root/SteamController"
@@ -72,6 +74,15 @@ func _walk(delta):
 
 	direction = direction.normalized()
 	
+	if (is_on_floor()):
+		has_contact = true
+	else:
+		if !$'FeetCast'.is_colliding():
+			has_contact = false
+	
+	if (has_contact and !is_on_floor()):
+		move_and_collide(Vector3(0,-0.1,0))
+	
 	var temp_velocity = velocity
 	temp_velocity.y = 0
 	
@@ -95,14 +106,22 @@ func _walk(delta):
 	velocity.x = temp_velocity.x
 	velocity.z = temp_velocity.z
 
+	if has_contact and Input.is_action_just_pressed("move_jump"):
+		velocity.y = jump_height
+		has_contact = false
+
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 
-	if Input.is_action_just_pressed("move_jump"):
-		velocity.y = jump_height
 
 
 func _do_gravity(delta):
-	velocity.y += gravity * delta
+	if !is_on_floor():
+		velocity.y += gravity * delta
+	else:
+		var n = $'FeetCast'.get_collision_normal()
+		var floor_angle = rad2deg(acos(n.dot(Vector3.UP)))
+		if floor_angle > MAX_SLOPE_ANGLE:
+			velocity.y += gravity * delta
 
 
 func _fly(delta):
