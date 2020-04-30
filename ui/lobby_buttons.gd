@@ -22,3 +22,5 @@ func _on_start_pressed():
 	for player in players:
 		var spawn_params = player
 		network_manager.spawn_new_networked('player', spawn_pos, spawn_params)
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

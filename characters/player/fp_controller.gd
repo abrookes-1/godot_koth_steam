@@ -31,6 +31,8 @@ func _ready():
 	steam_id = spawn_params['steam_id']
 	steam_name = spawn_params['steam_name']
 	is_owner = steam_id == steam_controller.STEAM_ID
+	if is_owner:
+		get_node('Head/Camera').make_current()
 
 func _process(delta):
 	if is_owner:
