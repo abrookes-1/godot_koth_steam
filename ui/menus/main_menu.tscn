@@ -1,180 +1,92 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/menu_main_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/ui/sounds/GAME_MENU_SCORE_SFX001521.wav" type="AudioStream" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/materials/ui/menu_blur.material" type="Material" id=4]
+[ext_resource path="res://ui/lobby_buttons.gd" type="Script" id=2]
+[ext_resource path="res://ui/menus/player_name_label.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/styles/menu_theme1.tres" type="Theme" id=5]
-[ext_resource path="res://assets/ui/scripts/ui_resizer.gd" type="Script" id=6]
-[ext_resource path="res://assets/ui/scripts/ui_opener.gd" type="Script" id=7]
-[ext_resource path="res://assets/ui/scripts/ui_sound_machine.gd" type="Script" id=8]
 
-[node name="BaseBlurred" type="Panel"]
-material = ExtResource( 4 )
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Window" type="Control"]
+margin_right = 550.0
+margin_bottom = 300.0
+rect_scale = Vector2( 3.42924, 3.49742 )
 theme = ExtResource( 5 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Resizer" type="Node" parent="."]
-script = ExtResource( 6 )
-
-[node name="ShowHide" type="Node" parent="."]
-script = ExtResource( 7 )
-
-[node name="EdgeScreenPadding" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 60.0
-margin_top = 40.0
-margin_right = -60.0
-margin_bottom = -40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TabContainer" type="TabContainer" parent="EdgeScreenPadding"]
-margin_right = 904.0
-margin_bottom = 520.0
-tab_align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sounds" type="Node" parent="EdgeScreenPadding/TabContainer"]
-script = ExtResource( 8 )
-
-[node name="SelectSound" type="AudioStreamPlayer" parent="EdgeScreenPadding/TabContainer/Sounds"]
-stream = ExtResource( 2 )
-
-[node name="Game" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 96.0
-margin_right = -20.0
-margin_bottom = -10.0
-
-[node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Game"]
-margin_right = 864.0
-margin_bottom = 414.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Host" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_right = 864.0
-margin_bottom = 41.0
-grow_horizontal = 2
-size_flags_horizontal = 3
+[node name="MainOptions" type="VBoxContainer" parent="."]
+anchor_left = 0.376
+anchor_top = 0.197
+anchor_right = 0.376
+anchor_bottom = 0.197
+margin_left = -132.776
+margin_top = 28.6349
+margin_right = 281.224
+margin_bottom = 146.635
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Host" type="Button" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Host"]
-margin_right = 864.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
+[node name="Create" type="Button" parent="MainOptions"]
+margin_top = 41.0
+margin_right = 414.0
+margin_bottom = 77.0
 custom_fonts/font = ExtResource( 1 )
-text = "Host"
+text = "Create New Lobby"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Abaondon" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 45.0
-margin_right = 864.0
-margin_bottom = 80.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Abaondon"]
-margin_right = 864.0
-margin_bottom = 35.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Abandon"
-
-[node name="Surrender" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 84.0
-margin_right = 864.0
-margin_bottom = 119.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Surrender"]
-margin_right = 864.0
-margin_bottom = 35.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Surrender"
-
-[node name="Audio" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
+[node name="InLobbyMenu" type="Control" parent="."]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 96.0
-margin_right = -20.0
-margin_bottom = -10.0
-
-[node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio"]
-margin_right = 864.0
-margin_bottom = 414.0
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Master" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList"]
-margin_right = 984.0
-margin_bottom = 14.0
+[node name="VBoxContainer" type="HBoxContainer" parent="InLobbyMenu"]
+margin_left = 0.813492
+margin_top = -0.797577
+margin_right = 550.813
+margin_bottom = 299.202
 grow_horizontal = 2
-size_flags_horizontal = 3
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/Master"]
-margin_right = 490.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Master"
+[node name="MarginContainer" type="MarginContainer" parent="InLobbyMenu/VBoxContainer"]
+margin_left = 132.0
+margin_right = 243.0
+margin_bottom = 300.0
 
-[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/Master"]
-margin_left = 494.0
-margin_right = 984.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
+[node name="PlayersList" type="VBoxContainer" parent="InLobbyMenu/VBoxContainer/MarginContainer"]
+margin_right = 111.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" parent="InLobbyMenu/VBoxContainer/MarginContainer/PlayersList" instance=ExtResource( 3 )]
+margin_right = 111.0
+text = "Players:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="InLobbyMenu/VBoxContainer"]
+margin_left = 247.0
+margin_right = 418.0
+margin_bottom = 300.0
+
+[node name="Start" type="Button" parent="InLobbyMenu/VBoxContainer/MarginContainer2"]
+margin_right = 171.0
+margin_bottom = 300.0
 custom_fonts/font = ExtResource( 1 )
-text = "100%"
+text = "Start Game"
 align = 2
-
-[node name="VOIP" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList"]
-margin_top = 18.0
-margin_right = 984.0
-margin_bottom = 32.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/VOIP"]
-margin_right = 490.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "VOIP"
-
-[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/VOIP"]
-margin_left = 494.0
-margin_right = 984.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "1%"
-align = 2
-
-[node name="TestBackground" type="Sprite" parent="."]
-visible = false
-show_behind_parent = true
-position = Vector2( 510.669, 299.046 )
-scale = Vector2( 15.9515, 9.33582 )
-texture = ExtResource( 3 )
-[connection signal="tab_selected" from="EdgeScreenPadding/TabContainer" to="EdgeScreenPadding/TabContainer/Sounds" method="_on_tab_selected"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MainOptions/Create" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="InLobbyMenu/VBoxContainer/MarginContainer2/Start" to="." method="_on_start_pressed"]

@@ -3,17 +3,19 @@ extends Node
 # Steam variables
 var OWNED = false
 var ONLINE = false
-var STEAM_ID = Steam.getSteamID()
+var STEAM_ID
 var STEAM_USERNAME = ""
 var STEAM_LOBBY_ID = 0
 var LOBBY_MEMBERS = []
 var DATA
 var LOBBY_INVITE_ARG = false
 
+onready var network_manager = $"/root/NetworkManager"
+
 func _ready():
 	# connect buttons
-	var create_lobby_button = $"../MainMenu/EdgeScreenPadding/TabContainer/Game/GraphicsList/Host/Host"
-	create_lobby_button.connect("pressed", self, "_create_Lobby")
+	#var create_lobby_button = $"../MainMenu/EdgeScreenPadding/TabContainer/Game/GraphicsList/Host/Host"
+	#create_lobby_button.connect("pressed", self, "_create_Lobby")
 	print("connected-------")
 	
 	Steam.connect("lobby_created", self, "_on_Lobby_Created")
@@ -43,7 +45,8 @@ func _ready():
 
 func _process(delta):
 	Steam.run_callbacks()
-	_read_P2P_Packet()
+	#_read_P2P_Packet()
+
 
 func _on_Host_pressed():
 	print("asdas")
@@ -73,25 +76,19 @@ func _create_Lobby():
 		Steam.createLobby(2, 2)
 
 func _on_Lobby_Created(connect, lobbyID):
-	print("1")
+	NetworkManager.is_host = true
+	
 	if connect == 1:
-		print("2")
 		# Set the lobby ID
 		STEAM_LOBBY_ID = lobbyID
-		print("3")
 		print("Created a lobby: "+str(STEAM_LOBBY_ID))
-		print("4")
 
 		# Set some lobby data
-		print("5")
 		Steam.setLobbyData(lobbyID, "name", "Gramps' Lobby")
-		print("6")
 		Steam.setLobbyData(lobbyID, "mode", "GodotSteam test")
 
 		# Allow P2P connections to fallback to being relayed through Steam if needed
-		print("7")
 		var RELAY = Steam.allowP2PPacketRelay(true)
-		print("8")
 		print("Allowing Steam to be relay backup: "+str(RELAY))
 
 func _on_Open_Lobby_List_pressed():
@@ -131,7 +128,6 @@ func _join_Lobby(lobbyID):
 	Steam.joinLobby(lobbyID)
 
 func _on_Lobby_Joined(lobbyID, permissions, locked, response):
-	
 	# Set this lobby ID as your lobby ID
 	STEAM_LOBBY_ID = lobbyID
 	
@@ -140,6 +136,8 @@ func _on_Lobby_Joined(lobbyID, permissions, locked, response):
 	
 	# Make the initial handshake
 	_make_P2P_Handshake()
+	
+	
 
 func _on_Lobby_Join_Requested(lobbyID, friendID):
 	
@@ -158,6 +156,7 @@ func _get_Lobby_Members():
 	# Get the number of members from this lobby from Steam
 	var MEMBERS = Steam.getNumLobbyMembers(STEAM_LOBBY_ID)
 
+
 	# Get the data of these players from Steam
 	for MEMBER in range(0, MEMBERS):
 
@@ -168,7 +167,7 @@ func _get_Lobby_Members():
 		var MEMBER_STEAM_NAME = Steam.getFriendPersonaName(MEMBER_STEAM_ID)
 
 		# Add them to the list
-		#LOBBY_MEMBERS.append({"steam_id":steam_id, "steam_name":steam_name})
+		LOBBY_MEMBERS.append({"steam_id":MEMBER_STEAM_ID, "steam_name":MEMBER_STEAM_NAME})
 
 
 func _make_P2P_Handshake():
@@ -206,6 +205,8 @@ func _on_Lobby_Chat_Update(lobbyID, changedID, makingChangeID, chatState):
 
 	# Update the lobby now that a change has occurred
 	_get_Lobby_Members()
+	print(LOBBY_MEMBERS)
+
 
 func _on_Send_Chat_pressed():
 
@@ -262,7 +263,7 @@ func _read_P2P_Packet():
 
 		var PACKET = Steam.readP2PPacket(PACKET_SIZE, 0)
 
-		if PACKET.empty():
+		if PACKET.empty() or PACKET.data.empty():
 			print("WARNING: read an empty packet with non-zero size!")
 
 
@@ -276,7 +277,7 @@ func _read_P2P_Packet():
 
 		# Print the packet to output
 		print("Packet: "+str(READABLE))
-
+		return READABLE
 		# Append logic here to deal with packet data
 
 
@@ -320,8 +321,8 @@ func _on_P2P_Session_Connect_Fail(lobbyID, session_error):
 	else:
 		print("WARNING: Session failure with "+str(lobbyID)+" [unknown error "+str(session_error)+"].")
 
-
-
+func _on_Lobby_Data_Update(success, lobbyID, memberID, key):
+	print("Success: "+str(success)+", Lobby ID: "+str(lobbyID)+", Member ID: "+str(memberID)+", Key: "+str(key))
 
 
 

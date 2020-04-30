@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
 [ext_resource path="res://assets/fonts/menu_title_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ui/styles/tab_inactive_style.tres" type="StyleBox" id=2]
 [ext_resource path="res://ui/styles/tab_active_style.tres" type="StyleBox" id=3]
 [ext_resource path="res://assets/fonts/menu_main_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://ui/styles/button_normal_style.tres" type="StyleBox" id=5]
+[ext_resource path="res://ui/styles/button_hover_style.tres" type="StyleBox" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 content_margin_left = 20.0
@@ -13,12 +15,23 @@ content_margin_bottom = 10.0
 
 [resource]
 default_font = ExtResource( 4 )
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.615686, 0.615686, 0.615686, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 4 )
+Button/styles/disabled = ExtResource( 5 )
+Button/styles/focus = ExtResource( 5 )
+Button/styles/hover = ExtResource( 6 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 6 )
 MenuButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 MenuButton/colors/font_color_disabled = Color( 1, 1, 1, 0.3 )
 MenuButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
 MenuButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 MenuButton/constants/hseparation = 3
-MenuButton/fonts/font = null
+MenuButton/fonts/font = ExtResource( 4 )
 MenuButton/styles/disabled = null
 MenuButton/styles/focus = null
 MenuButton/styles/hover = null

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bullet.obj-b6cbfae8998efa63a6cf539ef144227b.mesh"
+
+[deps]
+
+files=[ "res://.import/bullet.obj-b6cbfae8998efa63a6cf539ef144227b.mesh" ]
+
+source_file="res://weapons/ammo/bullet.obj"
+dest_files=[ "res://.import/bullet.obj-b6cbfae8998efa63a6cf539ef144227b.mesh", "res://.import/bullet.obj-b6cbfae8998efa63a6cf539ef144227b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
