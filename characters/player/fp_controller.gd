@@ -31,11 +31,11 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	if temp > 10:
-		temp = 0
-		network_manager.send_position(self)
-		print(translation)
-	temp += delta
+	if network_manager.is_host:
+		if temp > 10:
+			temp = 0
+			network_manager.send_position(self)
+		temp += delta
 	
 
 func _input(event):

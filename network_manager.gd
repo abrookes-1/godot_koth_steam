@@ -16,8 +16,6 @@ func _ready():
 
 func _physics_process(delta):
 	if is_host:
-		#_process_client_updates()
-		#_send_updates()
 		pass
 	else:
 		_process_server_updates()
@@ -30,11 +28,26 @@ func _process_client_updates():
 func _process_server_updates():
 	# get updates from server
 	var data = steam_controller._read_P2P_Packet()
-	if data and data.get('directive'):
+	if data != null and data.has('directive'):
+		print("dir--" + data['directive'])
+		print('checking directive' + str(data['directive']))
 		if data['directive'] == 'position':
 			do_position_directive(data)
 		elif data['directive'] == 'spawn':
+			print("spawning object")
 			do_spawn_directive(data)
+			
+#	var data = steam_controller._read_P2P_Packet()
+#	if data != null and data.has('directive'):
+#		print("dir--" + data['directive'])
+#	if data and data.has('directive'):
+#		print('checking directive' + str(data['directive']))
+#		if data['directive'] == 'position':
+#			do_position_directive(data)
+#		elif data['directive'] == 'spawn':
+#			print("spawning object")
+#			do_spawn_directive(data)
+
 
 func add_networked_node(node):
 	net_nodes[node.net_id] = node
@@ -66,7 +79,6 @@ func do_position_directive(data):
 	pass
 
 func do_spawn_directive(data):
-	print("spawning object")
 	# spawn new object
 	var new_player = spawnable[data['type']].instance()
 	new_player.set_pos(data['position'])
@@ -87,5 +99,5 @@ func spawn_new_networked(type, position):
 	send_spawn(type, position, new_player.net_id)
 	
 func get_new_id():
-	id_counter += 1
+	id_counter = id_counter + 1
 	return id_counter
