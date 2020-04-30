@@ -28,14 +28,16 @@ __meta__ = {
 }
 
 [node name="Create" type="Button" parent="VBoxContainer"]
+margin_top = 30.0
 margin_right = 414.0
-margin_bottom = 57.0
+margin_bottom = 87.0
 text = "Create New Lobby"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start" type="Button" parent="VBoxContainer"]
+visible = false
 margin_top = 61.0
 margin_right = 414.0
 margin_bottom = 118.0

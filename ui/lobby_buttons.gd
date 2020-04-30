@@ -13,7 +13,8 @@ func _ready():
 func _on_create_pressed():
 	# create steam lobby
 	steam_controller._create_Lobby()
-	
+	$'Create'.set_visible(false)
+	$'Start'.set_visible(true)
 
 
 func _on_start_pressed():
@@ -24,3 +25,4 @@ func _on_start_pressed():
 		network_manager.spawn_new_networked('player', spawn_pos, spawn_params)
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_parent().set_visible(false)
