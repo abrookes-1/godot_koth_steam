@@ -50,6 +50,7 @@ func send_spawn(type, position, net_id):
 	DATA.append(256)
 	DATA.append_array(var2bytes(d))
 	steam_controller._send_P2P_Packet(DATA, 2, 0)
+	print(d)
 
 func send_position(node):
 	var DATA = PoolByteArray()
@@ -81,10 +82,11 @@ func spawn_new_networked(type, position):
 	new_player.set_pos(position)
 	new_player.net_id = get_new_id()
 	get_tree().get_root().add_child(new_player)
+	var network_id = new_player.net_id
 	# push to networked objects
 	add_networked_node(new_player)
 	# send spawn directive to clients
-	send_spawn(type, position, new_player.net_id)
+	send_spawn(type, position, network_id)
 	
 func get_new_id():
 	id_counter += 1
