@@ -1,18 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/fonts/menu_main_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/ui/sounds/GAME_MENU_SCORE_SFX001521.wav" type="AudioStream" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/materials/ui/menu_blur.material" type="Material" id=4]
+[ext_resource path="res://ui/lobby_buttons.gd" type="Script" id=1]
 [ext_resource path="res://ui/styles/menu_theme1.tres" type="Theme" id=5]
 [ext_resource path="res://assets/ui/scripts/ui_resizer.gd" type="Script" id=6]
-[ext_resource path="res://assets/ui/scripts/ui_opener.gd" type="Script" id=7]
-[ext_resource path="res://assets/ui/scripts/ui_sound_machine.gd" type="Script" id=8]
 
-[node name="BaseBlurred" type="Panel"]
-material = ExtResource( 4 )
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Window" type="Control"]
+margin_right = 400.0
+margin_bottom = 40.0
+rect_scale = Vector2( 3.42924, 3.49742 )
 theme = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -21,160 +16,27 @@ __meta__ = {
 [node name="Resizer" type="Node" parent="."]
 script = ExtResource( 6 )
 
-[node name="ShowHide" type="Node" parent="."]
-script = ExtResource( 7 )
-
-[node name="EdgeScreenPadding" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 60.0
-margin_top = 40.0
-margin_right = -60.0
-margin_bottom = -40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 127.0
+margin_bottom = 44.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TabContainer" type="TabContainer" parent="EdgeScreenPadding"]
-margin_right = 904.0
-margin_bottom = 520.0
-tab_align = 0
+[node name="Create" type="Button" parent="VBoxContainer"]
+margin_right = 414.0
+margin_bottom = 57.0
+text = "Create New Lobby"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sounds" type="Node" parent="EdgeScreenPadding/TabContainer"]
-script = ExtResource( 8 )
-
-[node name="SelectSound" type="AudioStreamPlayer" parent="EdgeScreenPadding/TabContainer/Sounds"]
-stream = ExtResource( 2 )
-
-[node name="Game" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 96.0
-margin_right = -20.0
-margin_bottom = -10.0
-
-[node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Game"]
-margin_right = 864.0
-margin_bottom = 414.0
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_top = 61.0
+margin_right = 414.0
+margin_bottom = 118.0
+text = "Start Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Host" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_right = 864.0
-margin_bottom = 41.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Host" type="Button" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Host"]
-margin_right = 864.0
-margin_bottom = 41.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Host"
-
-[node name="Abaondon" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 45.0
-margin_right = 864.0
-margin_bottom = 80.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Abaondon"]
-margin_right = 864.0
-margin_bottom = 35.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Abandon"
-
-[node name="Surrender" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList"]
-margin_top = 84.0
-margin_right = 864.0
-margin_bottom = 119.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Game/GraphicsList/Surrender"]
-margin_right = 864.0
-margin_bottom = 35.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Surrender"
-
-[node name="Audio" type="MarginContainer" parent="EdgeScreenPadding/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 96.0
-margin_right = -20.0
-margin_bottom = -10.0
-
-[node name="GraphicsList" type="VBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio"]
-margin_right = 864.0
-margin_bottom = 414.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Master" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList"]
-margin_right = 984.0
-margin_bottom = 14.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/Master"]
-margin_right = 490.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Master"
-
-[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/Master"]
-margin_left = 494.0
-margin_right = 984.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "100%"
-align = 2
-
-[node name="VOIP" type="HBoxContainer" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList"]
-margin_top = 18.0
-margin_right = 984.0
-margin_bottom = 32.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/VOIP"]
-margin_right = 490.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "VOIP"
-
-[node name="Label2" type="Label" parent="EdgeScreenPadding/TabContainer/Audio/GraphicsList/VOIP"]
-margin_left = 494.0
-margin_right = 984.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "1%"
-align = 2
-
-[node name="TestBackground" type="Sprite" parent="."]
-visible = false
-show_behind_parent = true
-position = Vector2( 510.669, 299.046 )
-scale = Vector2( 15.9515, 9.33582 )
-texture = ExtResource( 3 )
-[connection signal="tab_selected" from="EdgeScreenPadding/TabContainer" to="EdgeScreenPadding/TabContainer/Sounds" method="_on_tab_selected"]
