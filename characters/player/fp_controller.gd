@@ -13,7 +13,8 @@ var gravity = -9.8 * 3
 const MAX_SPEED = 20
 const MAX_RUNNING_SPEED = 30
 const ACCEL = 2
-const DECEL = 6
+const DECEL = 20
+const AIR_DECEL = 0.3
 var jump_height = 15
 var temp = 0
 
@@ -45,14 +46,13 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	#if network_manager.is_host:
-	print("~~~~~~~~~~~" + str(Quat($'Head/Camera'.global_transform.basis)))
+	# send position with the frequency of _physics_process
 	if is_owner:
 		network_manager.send_position(self)
 
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		$Head.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 		
 		var change = -event.relative.y * mouse_sensitivity
@@ -81,6 +81,7 @@ func _walk(delta):
 	else:
 		if !$'FeetCast'.is_colliding():
 			has_contact = false
+		
 	
 	if (has_contact and !is_on_floor()):
 		move_and_collide(Vector3(0,-0.1,0))
@@ -101,7 +102,10 @@ func _walk(delta):
 	if direction.dot(temp_velocity) > 0:
 		acceleration = ACCEL
 	else:
-		acceleration = DECEL
+		if has_contact:
+			acceleration = DECEL
+		else:
+			acceleration = AIR_DECEL
 	
 	temp_velocity = temp_velocity.linear_interpolate(target, acceleration * delta)
 	
@@ -117,14 +121,18 @@ func _walk(delta):
 
 
 func _do_gravity(delta):
+	if !is_on_floor_or_slope():
+			velocity.y += gravity * delta
+
+func is_on_floor_or_slope():
 	if !is_on_floor():
-		velocity.y += gravity * delta
+		return false
 	else:
 		var n = $'FeetCast'.get_collision_normal()
 		var floor_angle = rad2deg(acos(n.dot(Vector3.UP)))
 		if floor_angle > MAX_SLOPE_ANGLE:
-			velocity.y += gravity * delta
-
+			return false
+	return true
 
 func _fly(delta):
 	direction = Vector3()
