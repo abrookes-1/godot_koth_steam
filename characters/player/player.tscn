@@ -57,6 +57,9 @@ material/4 = null
 material/5 = null
 material/6 = null
 
+[node name="firepoint" type="Spatial" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.59319 )
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 0.636302, 0, 0, 0, -1.71564e-07, -1.05305, 0, 0.554667, -9.03669e-08, 0, 0, 0 )
 visible = false
