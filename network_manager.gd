@@ -15,10 +15,10 @@ func _ready():
 
 
 func _physics_process(delta):
-	if is_host:
-		pass
-	else:
-		_process_server_updates()
+#	if is_host:
+#		pass
+#	else:
+	_process_server_updates()
 		
 
 func _process_client_updates():

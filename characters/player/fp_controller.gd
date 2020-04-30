@@ -35,10 +35,13 @@ func _ready():
 func _process(delta):
 	if is_owner:
 		_walk(delta)
+		
+	_do_gravity(delta)
 
 
 func _physics_process(delta):
-	if network_manager.is_host:
+	#if network_manager.is_host:
+	if is_owner:
 		network_manager.send_position(self)
 
 
@@ -67,7 +70,6 @@ func _walk(delta):
 
 	direction = direction.normalized()
 	
-	velocity.y += gravity * delta
 	var temp_velocity = velocity
 	temp_velocity.y = 0
 	
@@ -95,6 +97,10 @@ func _walk(delta):
 
 	if Input.is_action_just_pressed("move_jump"):
 		velocity.y = jump_height
+
+
+func _do_gravity(delta):
+	velocity.y += gravity * delta
 
 
 func _fly(delta):
