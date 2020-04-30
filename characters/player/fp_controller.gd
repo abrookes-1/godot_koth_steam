@@ -17,20 +17,29 @@ const DECEL = 6
 var jump_height = 15
 var temp = 0
 
+var spawn_params # set on spawn, do stuff with it in ready
 var net_id
+var steam_id
+var steam_name
+var is_owner
 
 onready var network_manager = $"/root/NetworkManager"
+onready var steam_controller = $"/root/SteamController"
 
 func _ready():
 	print("new player ready: " + str(net_id))
-
+	steam_id = spawn_params['steam_id']
+	steam_name = spawn_params['steam_name']
+	is_owner = steam_id == steam_controller.STEAM_ID
 
 func _process(delta):
-	_walk(delta)
+	if is_owner:
+		_walk(delta)
 
 
 func _physics_process(delta):
-	network_manager.send_position(self)
+	if network_manager.is_host:
+		network_manager.send_position(self)
 
 
 func _input(event):

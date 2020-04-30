@@ -75,11 +75,12 @@ func do_spawn_directive(data):
 	# push to networked objects
 	add_networked_node(new_player)
 
-func spawn_new_networked(type, position):
+func spawn_new_networked(type, position, params={}):
 	# spawn new object
 	var new_player = spawnable[type].instance()
 	new_player.set_pos(position)
 	new_player.net_id = get_new_id()
+	new_player.spawn_params = params
 	get_tree().get_root().add_child(new_player)
 	var network_id = new_player.net_id
 	# push to networked objects

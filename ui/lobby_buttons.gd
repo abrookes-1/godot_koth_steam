@@ -16,6 +16,9 @@ func _on_create_pressed():
 	
 
 
-func _on_join_pressed():
-	spawn_pos += Vector3(0, 0, 0)
-	network_manager.spawn_new_networked('player', spawn_pos)
+func _on_start_pressed():
+	var players = steam_controller.LOBBY_MEMBERS
+	
+	for player in players:
+		var spawn_params = player
+		network_manager.spawn_new_networked('player', spawn_pos, spawn_params)
