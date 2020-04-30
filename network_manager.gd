@@ -24,12 +24,17 @@ func _physics_process(delta):
 
 func _process_packet_update(data):
 	if data != null and data.has('directive'):
-		print('checking directive' + str(data['directive']))
+		
 		if data['directive'] == 'position':
-			do_position_directive(data)
+			_do_position_directive(data)
+			
 		elif data['directive'] == 'spawn':
-			print("spawning object")
-			do_spawn_directive(data)
+			print('spawning object')
+			_do_spawn_directive(data)
+			
+		elif data['directive'] == 'game_started':
+			print('received signal to start game')
+			_do_start_directive(data)
 
 func add_networked_node(node):
 	net_nodes[node.net_id] = node
@@ -53,14 +58,22 @@ func send_position(node):
 	}
 	send_json(d, 1, 0)
 	
-func do_position_directive(data):
+func send_started(params={}):
+	# sends a signal to players when the game starts
+	var d = {
+		'directive': 'game_started',
+		'params': params,
+	}
+	send_json(d, 2, 0)
+	
+func _do_position_directive(data):
 	if net_nodes.has(data['net_id']):
 		net_nodes[data['net_id']].set_rotation(data['rotation'])
 		net_nodes[data['net_id']].set_pos(data['position'])
 	else:
 		print('Warning: tried to move nonexistent net_id ' + str(data['net_id']))
 
-func do_spawn_directive(data):
+func _do_spawn_directive(data):
 	# spawn new object
 	var new_player = spawnable[data['type']].instance()
 	new_player.set_global_transform(data['transform'])
@@ -83,6 +96,11 @@ func spawn_new_networked(type, transform, params={}):
 	# send spawn directive to clients
 	send_spawn(type, transform, network_id, params)
 
+
+func _do_start_directive(data):
+	# do things on the cliend when the host presses start button
+	$'/root/Main/MainMenu'.set_visible(false)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func get_new_id():
 	id_counter = id_counter + 1
