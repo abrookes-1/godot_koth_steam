@@ -78,6 +78,9 @@ func _do_spawn_directive(data):
 	var new_player = spawnable[data['type']].instance()
 	new_player.set_global_transform(data['transform'])
 	new_player.net_id = data['net_id']
+	# catch id counter up to networked objects
+	if data['net_id'] >= id_counter:
+		id_counter = data['net_id'] + 1
 	new_player.spawn_params = data['params']
 	get_tree().get_root().add_child(new_player)
 	# push to networked objects
