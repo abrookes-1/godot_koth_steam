@@ -15,6 +15,7 @@ const MAX_RUNNING_SPEED = 30
 const ACCEL = 2
 const DECEL = 6
 var jump_height = 15
+var temp = 0
 
 var net_id
 
@@ -30,7 +31,12 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	network_manager.send_position(self)
+	if temp > 10:
+		temp = 0
+		network_manager.send_position(self)
+		print(translation)
+	temp += delta
+	
 
 func _input(event):
 	if event is InputEventMouseMotion:
