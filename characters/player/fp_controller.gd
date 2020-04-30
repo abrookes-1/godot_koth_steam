@@ -147,4 +147,4 @@ func set_pos(vec):
 	self.translation = vec
 
 func set_rotation(q):
-	self.rotation = q
+	self.transform.basis = q

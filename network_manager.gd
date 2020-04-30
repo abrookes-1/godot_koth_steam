@@ -59,7 +59,7 @@ func send_position(node):
 		'directive': 'position',
 		'net_id': node.net_id,
 		'position': node.translation,
-		'rotation': node.rotation
+		'rotation': Quat(node.transform.basis)
 	}
 	DATA.append(256)
 	DATA.append_array(var2bytes(d))
