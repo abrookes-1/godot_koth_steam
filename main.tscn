@@ -31,3 +31,6 @@ material = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.0636265, 0, 0.997974, 0, 1, 0, -0.997974, 0, 0.0636265, 17.8525, 4.71775, -0.024663 )
+
+[node name="SpawnPoint" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0114, -5.73414 )

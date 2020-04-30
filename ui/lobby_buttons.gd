@@ -1,6 +1,7 @@
 extends Control
 
-var spawn_pos = Vector3(0,10,0)
+#var spawn_pos = Vector3(0,10,0)
+onready var spawn_transform = $'/root/Main/SpawnPoint'.transform
 
 onready var steam_controller = $"/root/SteamController"
 onready var network_manager = $"/root/NetworkManager"
@@ -41,7 +42,7 @@ func _on_start_pressed():
 	
 	for player in players:
 		var spawn_params = player
-		network_manager.spawn_new_networked('player', spawn_pos, spawn_params)
+		network_manager.spawn_new_networked('player', spawn_transform, spawn_params)
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	in_lobby_menu.set_visible(false)
