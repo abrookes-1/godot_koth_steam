@@ -18,16 +18,10 @@ func _physics_process(delta):
 #	if is_host:
 #		pass
 #	else:
-	_process_server_updates()
-		
+	_process_packet_update(steam_controller._read_P2P_Packet())
 
-func _process_client_updates():
-	# get updates from all clients
-	pass
 
-func _process_server_updates():
-	# get updates from server
-	var data = steam_controller._read_P2P_Packet()
+func _process_packet_update(data):
 	if data != null and data.has('directive'):
 		print('checking directive' + str(data['directive']))
 		if data['directive'] == 'position':
@@ -40,7 +34,6 @@ func add_networked_node(node):
 	net_nodes[node.net_id] = node
 
 func send_spawn(type, position, net_id, params):
-	var DATA = PoolByteArray()
 	var d = {
 		'directive': 'spawn',
 		'type': type,
@@ -48,22 +41,16 @@ func send_spawn(type, position, net_id, params):
 		'position': position,
 		'params': params
 	}
-	DATA.append(256)
-	DATA.append_array(var2bytes(d))
-	steam_controller._send_P2P_Packet(DATA, 2, 0)
-	print(d)
+	send_json(d, 2, 0)
 
 func send_position(node):
-	var DATA = PoolByteArray()
 	var d = {
 		'directive': 'position',
 		'net_id': node.net_id,
 		'position': node.get_pos(),
 		'rotation': node.get_rotation()
 	}
-	DATA.append(256)
-	DATA.append_array(var2bytes(d))
-	steam_controller._send_P2P_Packet(DATA, 1, 0)
+	send_json(d, 1, 0)
 	
 func do_position_directive(data):
 	if net_nodes.has(data['net_id']):
@@ -98,3 +85,10 @@ func spawn_new_networked(type, position, params={}):
 func get_new_id():
 	id_counter = id_counter + 1
 	return id_counter
+
+
+func send_json(data, method, channel):
+	var DATA = PoolByteArray()
+	DATA.append(256)
+	DATA.append_array(var2bytes(data))
+	steam_controller._send_P2P_Packet(DATA, method, channel)
