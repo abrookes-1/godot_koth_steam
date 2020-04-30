@@ -144,11 +144,15 @@ func _fly(delta):
 	
 	move_and_slide(velocity)
 
+func get_pos():
+	return translation
+
 func set_pos(vec):
-	self.translation = vec
+	translation = vec
 
 func set_rotation(q):
-	$'Head/Camera'.global_transform = Basis(q)
-	
+	$'Head/Camera'.global_transform.basis = Basis(q)
+
 func get_rotation():
 	return Quat($'Head/Camera'.global_transform.basis)
+
