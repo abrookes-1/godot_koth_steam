@@ -29,25 +29,12 @@ func _process_server_updates():
 	# get updates from server
 	var data = steam_controller._read_P2P_Packet()
 	if data != null and data.has('directive'):
-		print("dir--" + data['directive'])
 		print('checking directive' + str(data['directive']))
 		if data['directive'] == 'position':
 			do_position_directive(data)
 		elif data['directive'] == 'spawn':
 			print("spawning object")
 			do_spawn_directive(data)
-			
-#	var data = steam_controller._read_P2P_Packet()
-#	if data != null and data.has('directive'):
-#		print("dir--" + data['directive'])
-#	if data and data.has('directive'):
-#		print('checking directive' + str(data['directive']))
-#		if data['directive'] == 'position':
-#			do_position_directive(data)
-#		elif data['directive'] == 'spawn':
-#			print("spawning object")
-#			do_spawn_directive(data)
-
 
 func add_networked_node(node):
 	net_nodes[node.net_id] = node
@@ -74,10 +61,10 @@ func send_position(node):
 	}
 	DATA.append(256)
 	DATA.append_array(var2bytes(d))
-	steam_controller._send_P2P_Packet(DATA, 2, 0)
+	steam_controller._send_P2P_Packet(DATA, 1, 0)
 	
 func do_position_directive(data):
-	pass
+	net_nodes[data['net_id']].set_pos(data['position'])
 
 func do_spawn_directive(data):
 	# spawn new object

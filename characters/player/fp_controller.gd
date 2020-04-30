@@ -112,4 +112,4 @@ func _fly(delta):
 	move_and_slide(velocity)
 
 func set_pos(vec):
-	self.global_translate(vec)
+	self.translation = vec

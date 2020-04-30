@@ -45,7 +45,7 @@ func _ready():
 
 func _process(delta):
 	Steam.run_callbacks()
-	_read_P2P_Packet()
+	#_read_P2P_Packet()
 
 
 func _on_Host_pressed():

@@ -17,5 +17,5 @@ func _on_create_pressed():
 
 
 func _on_join_pressed():
-	spawn_pos += Vector3(1, 1, 1)
+	spawn_pos += Vector3(0, 0, 0)
 	network_manager.spawn_new_networked('player', spawn_pos)
