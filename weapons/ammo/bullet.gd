@@ -17,18 +17,17 @@ func _physics_process(delta):
 	if timer >= KILL_TIMER:
 		queue_free()
 	
-	
 	velocity.y += gravity
 	
 	
 	var collision = move_and_collide(velocity * delta)
 	
-#	if collision:
-#		velocity = Vector3.ZERO
-#		var collided_with = collision.collider as StaticBody
-#
-#		if collided_with.is_in_group('shootable'):
-#			print('ded')
+	if collision:
+		velocity = Vector3.ZERO
+		var collided_with = collision.collider as StaticBody
+
+		if collided_with.is_in_group('shootable'):
+			print('ded')
 
 func collided(body):
 	if hit_something == false:
