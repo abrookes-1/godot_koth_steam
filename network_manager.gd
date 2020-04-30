@@ -59,6 +59,7 @@ func send_position(node):
 		'directive': 'position',
 		'net_id': node.net_id,
 		'position': node.translation,
+		'rotation': node.rotation
 	}
 	DATA.append(256)
 	DATA.append_array(var2bytes(d))
@@ -67,6 +68,7 @@ func send_position(node):
 func do_position_directive(data):
 	if net_nodes.has(data['net_id']):
 		net_nodes[data['net_id']].set_pos(data['position'])
+		net_nodes[data['net_id']].set_rotation(data['rotation'])
 	else:
 		print('Warning: tried to move nonexistent net_id ' + str(data['net_id']))
 
