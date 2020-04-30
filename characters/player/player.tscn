@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://characters/player/fp_controller.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/capsule_shape.tres" type="Shape" id=2]
-[ext_resource path="res://assets/items/Sniper.fbx" type="PackedScene" id=3]
+[ext_resource path="res://weapons/sniper.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://characters/player/char.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://characters/player/Camera.gd" type="Script" id=5]
+[ext_resource path="res://weapons/sniper.gd" type="Script" id=6]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -21,9 +22,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14027, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 script = ExtResource( 5 )
-
-[node name="Sniper" parent="Head/Camera" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375105, -1.07046, -2.72537 )
 
 [node name="char" type="MeshInstance" parent="Head/Camera"]
 transform = Transform( -4, 1.55766e-06, 3.49691e-07, 1.55766e-06, 4, 4.76838e-07, -3.49691e-07, 4.76839e-07, -4, -0.0494242, -2.73654, 0.0561972 )
@@ -44,6 +42,20 @@ material/12 = null
 material/13 = null
 material/14 = null
 material/15 = null
+
+[node name="sniper" type="Spatial" parent="Head/Camera"]
+script = ExtResource( 6 )
+
+[node name="sniper" type="MeshInstance" parent="Head/Camera/sniper"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.468544, -0.986977, -3.08701 )
+mesh = ExtResource( 3 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 0.636302, 0, 0, 0, -1.71564e-07, -1.05305, 0, 0.554667, -9.03669e-08, 0, 0, 0 )
