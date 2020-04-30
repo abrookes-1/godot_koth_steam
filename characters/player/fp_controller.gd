@@ -24,10 +24,12 @@ var steam_id
 var steam_name
 var is_owner
 var has_contact = false
+
 const MAX_SLOPE_ANGLE = 35
 
 onready var network_manager = $"/root/NetworkManager"
 onready var steam_controller = $"/root/SteamController"
+onready var sniper = $"Head/Camera/sniper"
 
 func _ready():
 	print("new player ready: " + str(net_id))
@@ -59,6 +61,11 @@ func _input(event):
 		if change + camera_angle < 90 and change + camera_angle > -90:
 			$Head/Camera.rotate_x(deg2rad(change))
 			camera_angle += change
+			
+	if event is InputEventMouseButton:
+		if event.is_action_pressed("shoot"):
+			sniper.fire_weapon()
+
 
 
 func _walk(delta):
