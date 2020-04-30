@@ -22,9 +22,8 @@ var net_id
 onready var network_manager = $"/root/NetworkManager"
 
 func _ready():
-	net_id = 1
 	print("new player ready: " + str(net_id))
-	
+
 
 func _process(delta):
 	_walk(delta)
@@ -113,5 +112,4 @@ func _fly(delta):
 	move_and_slide(velocity)
 
 func set_pos(vec):
-	#self.to_global(vec)
-	pass
+	self.global_translate(vec)
