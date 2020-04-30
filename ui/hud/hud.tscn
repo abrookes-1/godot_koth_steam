@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 4 )
+width = 50
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0, 1, 1, 1, 1, 0, 0.352941, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 50
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.858551
+margin_right = 0.858521
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeightMeter" type="Control" parent="."]
+margin_left = 49.8281
+margin_top = 46.5319
+margin_right = 186.828
+margin_bottom = 406.532
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="HeightMeter"]
+margin_left = 6.60664
+margin_top = 239.019
+margin_right = 59.6066
+margin_bottom = 240.019
+rect_rotation = -90.0
+rect_scale = Vector2( 4.162, 13.315 )
+value = 100.0
+texture_under = SubResource( 3 )
+texture_progress = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://levels/obstacle_course/obstacle_course.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/menus/main_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/materials/shaders/misc/blur.shader" type="Shader" id=4]
 [ext_resource path="res://ui/menus/esc_menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/hud/hud.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -26,6 +27,9 @@ __meta__ = {
 [node name="BaseBlurred" parent="InGameMenu" instance=ExtResource( 5 )]
 visible = false
 material = SubResource( 1 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="obs_course" parent="." instance=ExtResource( 2 )]
 
