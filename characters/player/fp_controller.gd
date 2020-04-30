@@ -45,6 +45,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	#if network_manager.is_host:
+	print("~~~~~~~~~~~" + str(Quat($'Head/Camera'.global_transform.basis)))
 	if is_owner:
 		network_manager.send_position(self)
 
@@ -147,4 +148,7 @@ func set_pos(vec):
 	self.translation = vec
 
 func set_rotation(q):
-	self.transform.basis = q
+	$'Head/Camera'.global_transform = Basis(q)
+	
+func get_rotation():
+	return Quat($'Head/Camera'.global_transform.basis)
