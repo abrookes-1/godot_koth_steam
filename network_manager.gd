@@ -29,9 +29,8 @@ func _process_client_updates():
 
 func _process_server_updates():
 	# get updates from server
-	var p = steam_controller._read_P2P_Packet()
-	if p:
-		var data = parse_json(p)
+	var data = steam_controller._read_P2P_Packet()
+	if data and data.get('directive'):
 		if data['directive'] == 'position':
 			do_position_directive(data)
 		elif data['directive'] == 'spawn':
@@ -67,6 +66,7 @@ func do_position_directive(data):
 	pass
 
 func do_spawn_directive(data):
+	print("spawning object")
 	# spawn new object
 	var new_player = spawnable[data['type']].instance()
 	new_player.set_pos(data['position'])

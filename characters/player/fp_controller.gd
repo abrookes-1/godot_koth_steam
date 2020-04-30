@@ -31,7 +31,6 @@ func _process(delta):
 
 func _physics_process(delta):
 	network_manager.send_position(self)
-	print(translation)
 
 func _input(event):
 	if event is InputEventMouseMotion:

@@ -14,7 +14,6 @@ func _on_create_pressed():
 	# create steam lobby
 	steam_controller._create_Lobby()
 	
-	network_manager.spawn_new_networked('player', Vector3(0,10,0))
 
 func _on_join_pressed():
-	pass
+	network_manager.spawn_new_networked('player', Vector3(0,10,0))

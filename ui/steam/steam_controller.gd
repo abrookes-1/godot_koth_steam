@@ -47,6 +47,7 @@ func _process(delta):
 	Steam.run_callbacks()
 	_read_P2P_Packet()
 
+
 func _on_Host_pressed():
 	print("asdas")
 	_create_Lobby()
@@ -143,7 +144,7 @@ func _on_Lobby_Joined(lobbyID, permissions, locked, response):
 	# Make the initial handshake
 	_make_P2P_Handshake()
 	
-	NetworkManager.initialize_client()
+	
 
 func _on_Lobby_Join_Requested(lobbyID, friendID):
 	
@@ -269,7 +270,7 @@ func _read_P2P_Packet():
 
 		var PACKET = Steam.readP2PPacket(PACKET_SIZE, 0)
 
-		if PACKET.empty():
+		if PACKET.empty() or PACKET.data.empty():
 			print("WARNING: read an empty packet with non-zero size!")
 
 
@@ -283,7 +284,7 @@ func _read_P2P_Packet():
 
 		# Print the packet to output
 		print("Packet: "+str(READABLE))
-		return PACKET.data
+		return READABLE
 		# Append logic here to deal with packet data
 
 
