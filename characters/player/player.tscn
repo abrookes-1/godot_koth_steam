@@ -3,7 +3,6 @@
 [ext_resource path="res://characters/player/fp_controller.gd" type="Script" id=1]
 [ext_resource path="res://weapons/sniper.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://characters/player/char.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://characters/player/Camera.gd" type="Script" id=5]
 [ext_resource path="res://weapons/sniper.gd" type="Script" id=6]
 
 [sub_resource type="CylinderShape" id=2]
@@ -22,7 +21,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14027, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-script = ExtResource( 5 )
+script = SubResource( 2 )
 
 [node name="PlayerMainMesh" type="MeshInstance" parent="Head/Camera"]
 transform = Transform( -4, 1.55766e-06, 3.49691e-07, 1.55766e-06, 4, 4.76838e-07, -3.49691e-07, 4.76839e-07, -4, -0.0494242, -2.73654, 0.0561972 )

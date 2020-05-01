@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 NetworkManager="*res://network_manager.gd"
 SteamController="*res://ui/steam/steam_controller.gd"
+MoneyManager="*res://ui/economy/money/money_manager.gd"
 
 [display]
 

@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/economy/money/money.png" type="Texture" id=1]
+
+[node name="MoneyCounter" type="NinePatchRect"]
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="."]
+margin_left = 1785.0
+margin_top = 579.0
+margin_right = 1840.0
+margin_bottom = 639.0
+custom_colors/font_color = Color( 0.0941176, 0.745098, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.356863, 0.219608, 0.219608, 1 )
+text = "0
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="TextureRect" parent="."]
+margin_left = 1677.01
+margin_top = 307.119
+margin_right = 1933.01
+margin_bottom = 563.119
+texture = ExtResource( 1 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

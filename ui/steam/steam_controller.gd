@@ -42,13 +42,12 @@ func _ready():
 	STEAM_ID = Steam.getSteamID()
 	OWNED = Steam.isSubscribed()
 
-
 func _process(delta):
+		#_read_P2P_Packet()
 	Steam.run_callbacks()
-	#_read_P2P_Packet()
-
 
 func _on_Host_pressed():
+	#creates a lobby when you press the host button
 	print("asdas")
 	_create_Lobby()
 
@@ -136,8 +135,6 @@ func _on_Lobby_Joined(lobbyID, permissions, locked, response):
 	
 	# Make the initial handshake
 	_make_P2P_Handshake()
-	
-	
 
 func _on_Lobby_Join_Requested(lobbyID, friendID):
 	
@@ -168,7 +165,6 @@ func _get_Lobby_Members():
 
 		# Add them to the list
 		LOBBY_MEMBERS.append({"steam_id":MEMBER_STEAM_ID, "steam_name":MEMBER_STEAM_NAME})
-
 
 func _make_P2P_Handshake():
 
@@ -207,7 +203,6 @@ func _on_Lobby_Chat_Update(lobbyID, changedID, makingChangeID, chatState):
 	_get_Lobby_Members()
 	print(LOBBY_MEMBERS)
 
-
 func _on_Send_Chat_pressed():
 
 	# Get the entered chat message
@@ -222,7 +217,6 @@ func _on_Send_Chat_pressed():
 
 	# Clear the chat input
 	$Chat.clear()
-
 
 func _leave_Lobby():
 
@@ -277,9 +271,7 @@ func _read_P2P_Packet():
 
 		# Print the packet to output
 		print("Packet: "+str(READABLE))
-		return READABLE
-		# Append logic here to deal with packet data
-
+		return READABLE # Append logic here to deal with packet data
 
 func _send_P2P_Packet(data, send_type, channel):
 	
@@ -289,6 +281,7 @@ func _send_P2P_Packet(data, send_type, channel):
 		# Loop through all members that aren't you
 		for MEMBER in LOBBY_MEMBERS:
 			if MEMBER['steam_id'] != STEAM_ID:
+				print(Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel))
 				Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel)
 
 func _on_P2P_Session_Connect_Fail(lobbyID, session_error):
