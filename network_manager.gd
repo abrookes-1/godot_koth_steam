@@ -76,7 +76,6 @@ func send_game_state(node):
 		'steam_id': node.steam_id,
 		'current_money': node.current_money
 	}
-	print(g, 1, 0)
 	send_json(g, 1, 0)
 
 func _do_position_directive(data):
