@@ -3,6 +3,7 @@ extends Node
 var is_host = false
 var net_nodes = {}
 var id_counter = 0
+const MAX_PACKETS = 20
 
 onready var steam_controller = $"/root/SteamController"
 
@@ -12,7 +13,12 @@ onready var spawnable = {
 }
 
 func _physics_process(delta):
-	_process_packet_update(steam_controller._read_P2P_Packet())
+	var p = {}
+	var c = 0
+	while p != null && c < MAX_PACKETS:
+		p = steam_controller._read_P2P_Packet()
+		_process_packet_update(p)
+		c += 1
 
 func _process_packet_update(data):
 	#manager for directing packets to the correct methods for interpritation
