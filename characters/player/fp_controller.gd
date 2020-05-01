@@ -1,5 +1,6 @@
 extends KinematicBody
 
+
 var camera_angle = 0
 var mouse_sensitivity = 0.1
 
@@ -17,6 +18,9 @@ const DECEL = 20
 const AIR_ACCEL = 1
 var jump_height = 15
 var temp = 0
+
+var timer = 0
+var current_money = 0
 
 var spawn_params # set on spawn, do stuff with it in ready
 var net_id
@@ -47,20 +51,25 @@ func _ready():
 func _process(delta):
 	if is_owner:
 		_walk(delta)
-		
 	_do_gravity(delta)
-
 
 func _physics_process(delta):
 	# send position with the frequency of _physics_process
 	if is_owner:
 		network_manager.send_position(self)
-
+		#attempt to send game state info less often then delta
+		timer += delta
+		if timer > .02:
+			network_manager.send_game_state(self)
+			current_money += 1
+			timer = 0
 
 func _input(event):
+	#accepts mouse movment and turns the camera respectivly
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		$Head.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 		
+		#limits camera up and down movemnt per 90 degree angle
 		var change = -event.relative.y * mouse_sensitivity
 		if change + camera_angle < 90 and change + camera_angle > -90:
 			$Head/Camera.rotate_x(deg2rad(change))
@@ -69,8 +78,6 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_action_pressed("shoot"):
 			weapon.fire_weapon()
-
-
 
 func _walk(delta):
 	direction = Vector3()
@@ -128,8 +135,6 @@ func _walk(delta):
 
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 
-
-
 func _do_gravity(delta):
 	if !is_on_floor_or_slope():
 			velocity.y += gravity * delta
@@ -174,4 +179,9 @@ func set_rotation(q):
 
 func get_rotation():
 	return Quat($'Head/Camera'.global_transform.basis)
+
+func generate_game_state():
+	#generates a json of the current state of the game in the cleints eyes
+	pass
+
 
