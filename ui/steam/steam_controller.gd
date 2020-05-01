@@ -48,7 +48,6 @@ func _process(delta):
 
 func _on_Host_pressed():
 	#creates a lobby when you press the host button
-	print("asdas")
 	_create_Lobby()
 
 func _check_Command_Line():
@@ -201,7 +200,7 @@ func _on_Lobby_Chat_Update(lobbyID, changedID, makingChangeID, chatState):
 
 	# Update the lobby now that a change has occurred
 	_get_Lobby_Members()
-	print(LOBBY_MEMBERS)
+	#print(LOBBY_MEMBERS)
 
 func _on_Send_Chat_pressed():
 
@@ -270,7 +269,7 @@ func _read_P2P_Packet():
 		var READABLE = bytes2var(PACKET.data.subarray(1, PACKET_SIZE - 1))
 
 		# Print the packet to output
-		print("Packet: "+str(READABLE))
+		#print("Packet: "+str(READABLE))
 		return READABLE # Append logic here to deal with packet data
 
 func _send_P2P_Packet(data, send_type, channel):
@@ -281,7 +280,6 @@ func _send_P2P_Packet(data, send_type, channel):
 		# Loop through all members that aren't you
 		for MEMBER in LOBBY_MEMBERS:
 			if MEMBER['steam_id'] != STEAM_ID:
-				print(Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel))
 				Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel)
 
 func _on_P2P_Session_Connect_Fail(lobbyID, session_error):

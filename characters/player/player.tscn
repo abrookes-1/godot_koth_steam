@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://characters/player/fp_controller.gd" type="Script" id=1]
 [ext_resource path="res://weapons/sniper.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://characters/player/char.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://weapons/sniper.gd" type="Script" id=6]
 
-[sub_resource type="CylinderShape" id=2]
+[sub_resource type="CylinderShape" id=1]
 
-[sub_resource type="CapsuleMesh" id=1]
+[sub_resource type="CapsuleMesh" id=2]
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75302, 1.69389, 3.30975 )
@@ -15,13 +15,13 @@ script = ExtResource( 1 )
 
 [node name="GroundCollider" type="CollisionShape" parent="."]
 transform = Transform( 0.8, 0, 0, 0, 2, 0, 0, 0, 0.8, 0, 0.346799, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14027, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="PlayerMainMesh" type="MeshInstance" parent="Head/Camera"]
 transform = Transform( -4, 1.55766e-06, 3.49691e-07, 1.55766e-06, 4, 4.76838e-07, -3.49691e-07, 4.76839e-07, -4, -0.0494242, -2.73654, 0.0561972 )
@@ -64,7 +64,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.59319 )
 [node name="CapsuleMesh" type="MeshInstance" parent="."]
 transform = Transform( 0.636302, 0, 0, 0, -1.71564e-07, -1.05305, 0, 0.554667, -9.03669e-08, 0, 0, 0 )
 visible = false
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="FeetCast" type="RayCast" parent="."]

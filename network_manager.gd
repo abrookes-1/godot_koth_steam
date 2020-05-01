@@ -12,13 +12,16 @@ onready var spawnable = {
 	'bullet': preload("res://weapons/ammo/bullet.tscn"),
 }
 
-func _physics_process(delta):
+func _process(delta):
 	var p = {}
 #	var c = 0
 #	while p != null && c < MAX_PACKETS:
 	p = steam_controller._read_P2P_Packet()
 	_process_packet_update(p)
 #		c += 1
+
+func _physics_process(delta):
+	pass
 
 func _process_packet_update(data):
 	#manager for directing packets to the correct methods for interpritation
@@ -37,6 +40,7 @@ func _process_packet_update(data):
 			
 		elif data['directive'] == 'game_state':
 			print('received signal of info game state')
+			print(data)
 			_do_game_state_check(data)
 
 func add_networked_node(node):
@@ -96,6 +100,7 @@ func _do_spawn_directive(data):
 		id_counter = data['net_id'] + 1
 	new_player.spawn_params = data['params']
 	get_tree().get_root().add_child(new_player)
+	print('------do spawn directive')
 	# push to networked objects
 	add_networked_node(new_player)
 
@@ -109,6 +114,7 @@ func spawn_new_networked(type, transform, params={}):
 	new_player.net_id = get_new_id()
 	new_player.spawn_params = params
 	get_tree().get_root().add_child(new_player)
+	print('------do spawn networked')
 	var network_id = new_player.net_id
 	# push to networked objects
 	add_networked_node(new_player)

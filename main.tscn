@@ -5,7 +5,7 @@
 [ext_resource path="res://ui/menus/main_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/materials/shaders/misc/blur.shader" type="Shader" id=4]
 [ext_resource path="res://ui/menus/esc_menu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://ui/hud/hud.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/economy/money/Money.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -14,6 +14,10 @@ shader_param/amount = 3.881
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
+
+[node name="Interface Layer" type="CanvasLayer" parent="."]
+
+[node name="Interface" parent="Interface Layer" instance=ExtResource( 6 )]
 
 [node name="MainMenu" parent="." instance=ExtResource( 3 )]
 
@@ -27,9 +31,6 @@ __meta__ = {
 [node name="BaseBlurred" parent="InGameMenu" instance=ExtResource( 5 )]
 visible = false
 material = SubResource( 1 )
-
-[node name="HUD" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="obs_course" parent="." instance=ExtResource( 2 )]
 
