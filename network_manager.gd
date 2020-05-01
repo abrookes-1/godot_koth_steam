@@ -67,11 +67,11 @@ func send_game_state(node):
 	#retrives info and sends a signal to all other players about the current game state
 	var g = {
 		'directive': 'game_state',
-		'net_id': node.net_id,
+		'steam_id': node.steam_id,
 		'current_money': node.current_money
 	}
-	print(g, 2, 0)
-	send_json(g, 2, 0)
+	print(g, 1, 0)
+	send_json(g, 1, 0)
 
 func _do_position_directive(data):
 	#moves cliet per packet data
