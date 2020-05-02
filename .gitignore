@@ -5,7 +5,13 @@
 bin/
 build/
 lib/
+<<<<<<< HEAD
 
 *.exe
 steam_api64.dll
 steam_appid.txt
+=======
+*.exe
+steam_api64.dll
+steam_appid.txt
+>>>>>>> master
