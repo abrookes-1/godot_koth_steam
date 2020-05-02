@@ -9,6 +9,8 @@ var STEAM_LOBBY_ID = 0
 var LOBBY_MEMBERS = []
 var DATA
 var LOBBY_INVITE_ARG = false
+var packets_read = 0
+var packets_sent = 0
 
 onready var network_manager = $"/root/NetworkManager"
 
@@ -272,7 +274,7 @@ func _read_P2P_Packet():
 		# Print the packet to output
 		#print("Packet: "+str(READABLE))
 		return READABLE # Append logic here to deal with packet data
-		var packets_read = 0
+		
 		packets_read += 1
 		print(packets_read)
 
@@ -284,7 +286,7 @@ func _send_P2P_Packet(data, send_type, channel):
 		# Loop through all members that aren't you
 		for MEMBER in LOBBY_MEMBERS:
 			if MEMBER['steam_id'] != STEAM_ID:
-				var packets_sent = 0
+				
 				packets_sent += 1
 				print(packets_sent)
 				Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel)
