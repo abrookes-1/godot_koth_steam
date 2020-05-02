@@ -71,7 +71,8 @@ func _check_Command_Line():
 func _create_Lobby():
 	# Make sure a lobby is not already set
 	if STEAM_LOBBY_ID == 0:
-		Steam.createLobby(2, 2)
+		# (lobby type, max players)
+		Steam.createLobby(2, 5)
 
 func _on_Lobby_Created(connect, lobbyID):
 	NetworkManager.is_host = true
