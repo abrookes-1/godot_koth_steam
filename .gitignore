@@ -5,3 +5,7 @@
 bin/
 build/
 lib/
+
+*.exe
+steam_api64.dll
+steam_appid.txt

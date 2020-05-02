@@ -21,6 +21,8 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14027, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
+fov = 90.0
+far = 500.0
 script = SubResource( 1 )
 
 [node name="PlayerMainMesh" type="MeshInstance" parent="Head/Camera"]
