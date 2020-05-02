@@ -274,7 +274,7 @@ func _read_P2P_Packet():
 		# Print the packet to output
 		#print("Packet: "+str(READABLE))
 		packets_read += 1
-		print("packets read" + packets_read)
+		print("packets read" + str(packets_read))
 		return READABLE # Append logic here to deal with packet data
 		
 
@@ -289,7 +289,7 @@ func _send_P2P_Packet(data, send_type, channel):
 			if MEMBER['steam_id'] != STEAM_ID:
 				
 				packets_sent += 1
-				print("packets sent" + packets_sent)
+				print("packets sent" + str(packets_sent))
 				Steam.sendP2PPacket(MEMBER['steam_id'], data, send_type, channel)
 
 func _on_P2P_Session_Connect_Fail(lobbyID, session_error):
