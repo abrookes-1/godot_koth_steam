@@ -44,7 +44,7 @@ material/14 = null
 material/15 = null
 
 [node name="Sniper" type="Spatial" parent="Head/Camera"]
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217395, 0, 0.602738 )
 script = ExtResource( 6 )
 
 [node name="SniperMesh" type="MeshInstance" parent="Head/Camera/Sniper"]

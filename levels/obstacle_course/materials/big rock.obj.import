@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/big rock.obj-b4e3d9a9a5505a33fc1f479beb5a950b.mesh"
+
+[deps]
+
+files=[ "res://.import/big rock.obj-b4e3d9a9a5505a33fc1f479beb5a950b.mesh" ]
+
+source_file="res://levels/obstacle_course/materials/big rock.obj"
+dest_files=[ "res://.import/big rock.obj-b4e3d9a9a5505a33fc1f479beb5a950b.mesh", "res://.import/big rock.obj-b4e3d9a9a5505a33fc1f479beb5a950b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

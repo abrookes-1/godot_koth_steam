@@ -1,1395 +1,1435 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://levels/obstacle_course/materials/blue2_grid_spatialmaterial.tres" type="Material" id=1]
-[ext_resource path="res://levels/obstacle_course/materials/grey_grid_spatialmaterial.tres" type="Material" id=2]
+[ext_resource path="res://lowpoly-grey-gradient(1).png" type="Texture" id=2]
+[ext_resource path="res://levels/obstacle_course/materials/med rock.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://levels/obstacle_course/materials/rock.tres" type="Material" id=4]
+[ext_resource path="res://levels/obstacle_course/materials/grey_grid_spatialmaterial.tres" type="Material" id=5]
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="ConcavePolygonShape" id=2]
-data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
 [sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
-[sub_resource type="ConcavePolygonShape" id=5]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.369698, 0.941264, 0.412983 )
 
-[sub_resource type="ConcavePolygonShape" id=6]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 2, 2, 2 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( 0, 1.3123, -0.0065, 0.3127, 1.3096, 0.0126, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, 0.3127, 1.3096, 0.0126, 0.1526, 1.3, 0.3332, 0.1526, 1.3, 0.3332, 0.2458, -0.1871, 0.4376, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, 0.2458, -0.1871, 0.4376, 0, 0.0927, 0.3802, 0.3684, -0.6399, 0, 0.2566, -0.6382, 0, 0.3743, -0.6399, 0.516, 0.3743, -0.6399, 0.516, 0.2566, -0.6382, 0, 0.2625, -0.6382, 0.516, 0.3743, 0.4089, 0, 0.5661, -0.1405, 0, 0.3975, 0.3836, 0.2175, 0.3975, 0.3836, 0.2175, 0.5661, -0.1405, 0, 0.4724, -0.229, 0.4292, 0.1238, 1.3196, -0.2913, 0.156, 0.149, -0.5438, 0.3402, 0.9028, -0.263, 0.3402, 0.9028, -0.263, 0.156, 0.149, -0.5438, 0.5661, -0.1936, -0.4687, 0.3402, 0.9028, -0.263, 0.5661, -0.1936, -0.4687, 0.3743, 0.4089, 0, 0.3743, 0.4089, 0, 0.5661, -0.1936, -0.4687, 0.5661, -0.1405, 0, 0.3743, -0.634, -0.3294, 0.2625, -0.6323, -0.4215, 0.3684, -0.6399, 0, 0.3684, -0.6399, 0, 0.2625, -0.6323, -0.4215, 0.2566, -0.6382, 0, 0, 1.311, -0.2823, 0.1238, 1.3196, -0.2913, 0, 1.3123, -0.0065, 0, 1.3123, -0.0065, 0.1238, 1.3196, -0.2913, 0.3127, 1.3096, 0.0126, 0.3376, -0.6721, -0.2006, 0.3743, -0.634, -0.3294, 0.4254, -0.5549, 0, 0.4254, -0.5549, 0, 0.3743, -0.634, -0.3294, 0.3684, -0.6399, 0, 0.3435, -0.4209, -0.4769, 0.2625, -0.6323, -0.4215, 0.3376, -0.6721, -0.2006, 0.3376, -0.6721, -0.2006, 0.2625, -0.6323, -0.4215, 0.3743, -0.634, -0.3294, 0.4254, -0.5549, 0, 0.3684, -0.6399, 0, 0.5267, -0.4781, 0.4427, 0.5267, -0.4781, 0.4427, 0.3684, -0.6399, 0, 0.3743, -0.6399, 0.516, 0.3435, -0.5095, 0.5278, 0.2625, -0.6382, 0.516, 0, -0.1062, 0.4376, 0, -0.1062, 0.4376, 0.2625, -0.6382, 0.516, 0, -0.634, 0.516, 0.5267, -0.4781, 0.4427, 0.3743, -0.6399, 0.516, 0.3435, -0.5095, 0.5278, 0.3435, -0.5095, 0.5278, 0.3743, -0.6399, 0.516, 0.2625, -0.6382, 0.516, 0, 0.1886, -0.6341, 0, -0.6281, -0.3294, 0.3435, -0.4209, -0.4769, 0.3435, -0.4209, -0.4769, 0, -0.6281, -0.3294, 0.2625, -0.6323, -0.4215, 0.1238, 1.3196, -0.2913, 0.3402, 0.9028, -0.263, 0.3127, 1.3096, 0.0126, 0.3127, 1.3096, 0.0126, 0.3402, 0.9028, -0.263, 0.3743, 0.4089, 0, 0.2625, -0.6323, -0.4215, 0, -0.6281, -0.3294, 0.2566, -0.6382, 0, 0.2566, -0.6382, 0, 0, -0.6281, -0.3294, 0, -0.634, 0, 0, 1.311, -0.2823, 0, 0.364, -0.6341, 0.1238, 1.3196, -0.2913, 0.1238, 1.3196, -0.2913, 0, 0.364, -0.6341, 0.156, 0.149, -0.5438, 0.2566, -0.6382, 0, 0, -0.634, 0, 0.2625, -0.6382, 0.516, 0.2625, -0.6382, 0.516, 0, -0.634, 0, 0, -0.634, 0.516, 0.3975, 0.3836, 0.2175, 0.4724, -0.229, 0.4292, 0.1526, 1.3, 0.3332, 0.1526, 1.3, 0.3332, 0.4724, -0.229, 0.4292, 0.2458, -0.1871, 0.4376, 0.3127, 1.3096, 0.0126, 0.3743, 0.4089, 0, 0.1526, 1.3, 0.3332, 0.1526, 1.3, 0.3332, 0.3743, 0.4089, 0, 0.3975, 0.3836, 0.2175, 0.4724, -0.229, 0.4292, 0.5267, -0.4781, 0.4427, 0.2458, -0.1871, 0.4376, 0.2458, -0.1871, 0.4376, 0.5267, -0.4781, 0.4427, 0.3435, -0.5095, 0.5278, 0, 0.364, -0.6341, 0, 0.1886, -0.6341, 0.156, 0.149, -0.5438, 0.156, 0.149, -0.5438, 0, 0.1886, -0.6341, 0.3435, -0.4209, -0.4769, 0.5661, -0.1936, -0.4687, 0.3376, -0.6721, -0.2006, 0.5661, -0.1405, 0, 0.5661, -0.1405, 0, 0.3376, -0.6721, -0.2006, 0.4254, -0.5549, 0, 0.156, 0.149, -0.5438, 0.3435, -0.4209, -0.4769, 0.5661, -0.1936, -0.4687, 0.5661, -0.1936, -0.4687, 0.3435, -0.4209, -0.4769, 0.3376, -0.6721, -0.2006, 0.5661, -0.1405, 0, 0.4254, -0.5549, 0, 0.4724, -0.229, 0.4292, 0.4724, -0.229, 0.4292, 0.4254, -0.5549, 0, 0.5267, -0.4781, 0.4427, 0.2458, -0.1871, 0.4376, 0.3435, -0.5095, 0.5278, 0, 0.0927, 0.3802, 0, 0.0927, 0.3802, 0.3435, -0.5095, 0.5278, 0, -0.1062, 0.4376, -0.1526, 1.3, 0.3332, -0.3127, 1.3096, 0.0126, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, -0.3127, 1.3096, 0.0126, 0, 1.3123, -0.0065, 0, 0.0927, 0.3802, -0.2458, -0.1871, 0.4376, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, -0.2458, -0.1871, 0.4376, -0.1526, 1.3, 0.3332, 0, 0.364, -0.6341, 0, 0.1753, 0, 0, 1.311, -0.2823, 0, 1.311, -0.2823, 0, 0.1753, 0, 0, 1.3123, -0.0065, -0.2625, -0.6382, 0.516, -0.2566, -0.6382, 0, -0.3743, -0.6399, 0.516, -0.3743, -0.6399, 0.516, -0.2566, -0.6382, 0, -0.3684, -0.6399, 0, -0.4724, -0.229, 0.4292, -0.5661, -0.1405, 0, -0.3975, 0.3836, 0.2175, -0.3975, 0.3836, 0.2175, -0.5661, -0.1405, 0, -0.3743, 0.4089, 0, -0.5661, -0.1936, -0.4687, -0.156, 0.149, -0.5438, -0.3402, 0.9028, -0.263, -0.3402, 0.9028, -0.263, -0.156, 0.149, -0.5438, -0.1238, 1.3196, -0.2913, -0.5661, -0.1405, 0, -0.5661, -0.1936, -0.4687, -0.3743, 0.4089, 0, -0.3743, 0.4089, 0, -0.5661, -0.1936, -0.4687, -0.3402, 0.9028, -0.263, -0.2566, -0.6382, 0, -0.2625, -0.6323, -0.4215, -0.3684, -0.6399, 0, -0.3684, -0.6399, 0, -0.2625, -0.6323, -0.4215, -0.3743, -0.634, -0.3294, 0, 0.1753, 0, 0, 0.0927, 0.3802, 0, 1.3123, -0.0065, 0, 1.3123, -0.0065, 0, 0.0927, 0.3802, 0, 1.3089, 0.2867, -0.3127, 1.3096, 0.0126, -0.1238, 1.3196, -0.2913, 0, 1.3123, -0.0065, 0, 1.3123, -0.0065, -0.1238, 1.3196, -0.2913, 0, 1.311, -0.2823, 0, -0.634, 0, 0, -0.634, 0.516, 0, 0, 0, 0, 0, 0, 0, -0.634, 0.516, 0, -0.1062, 0.4376, -0.3684, -0.6399, 0, -0.3743, -0.634, -0.3294, -0.4254, -0.5549, 0, -0.4254, -0.5549, 0, -0.3743, -0.634, -0.3294, -0.3376, -0.6721, -0.2006, -0.3743, -0.634, -0.3294, -0.2625, -0.6323, -0.4215, -0.3376, -0.6721, -0.2006, -0.3376, -0.6721, -0.2006, -0.2625, -0.6323, -0.4215, -0.3435, -0.4209, -0.4769, -0.3743, -0.6399, 0.516, -0.3684, -0.6399, 0, -0.5267, -0.4781, 0.4427, -0.5267, -0.4781, 0.4427, -0.3684, -0.6399, 0, -0.4254, -0.5549, 0, 0, -0.6281, -0.3294, 0, -0.634, 0, 0, 0.1886, -0.6341, 0, 0.1886, -0.6341, 0, -0.634, 0, 0, 0, 0, 0, -0.634, 0.516, -0.2625, -0.6382, 0.516, 0, -0.1062, 0.4376, 0, -0.1062, 0.4376, -0.2625, -0.6382, 0.516, -0.3435, -0.5095, 0.5278, -0.2625, -0.6382, 0.516, -0.3743, -0.6399, 0.516, -0.3435, -0.5095, 0.5278, -0.3435, -0.5095, 0.5278, -0.3743, -0.6399, 0.516, -0.5267, -0.4781, 0.4427, -0.2625, -0.6323, -0.4215, 0, -0.6281, -0.3294, -0.3435, -0.4209, -0.4769, -0.3435, -0.4209, -0.4769, 0, -0.6281, -0.3294, 0, 0.1886, -0.6341, -0.3743, 0.4089, 0, -0.3402, 0.9028, -0.263, -0.3127, 1.3096, 0.0126, -0.3127, 1.3096, 0.0126, -0.3402, 0.9028, -0.263, -0.1238, 1.3196, -0.2913, 0, -0.634, 0, 0, -0.6281, -0.3294, -0.2566, -0.6382, 0, -0.2566, -0.6382, 0, 0, -0.6281, -0.3294, -0.2625, -0.6323, -0.4215, -0.156, 0.149, -0.5438, 0, 0.364, -0.6341, -0.1238, 1.3196, -0.2913, -0.1238, 1.3196, -0.2913, 0, 0.364, -0.6341, 0, 1.311, -0.2823, 0, -0.634, 0.516, 0, -0.634, 0, -0.2625, -0.6382, 0.516, -0.2625, -0.6382, 0.516, 0, -0.634, 0, -0.2566, -0.6382, 0, -0.2458, -0.1871, 0.4376, -0.4724, -0.229, 0.4292, -0.1526, 1.3, 0.3332, -0.1526, 1.3, 0.3332, -0.4724, -0.229, 0.4292, -0.3975, 0.3836, 0.2175, -0.3975, 0.3836, 0.2175, -0.3743, 0.4089, 0, -0.1526, 1.3, 0.3332, -0.1526, 1.3, 0.3332, -0.3743, 0.4089, 0, -0.3127, 1.3096, 0.0126, -0.3435, -0.5095, 0.5278, -0.5267, -0.4781, 0.4427, -0.2458, -0.1871, 0.4376, -0.2458, -0.1871, 0.4376, -0.5267, -0.4781, 0.4427, -0.4724, -0.229, 0.4292, -0.3435, -0.4209, -0.4769, 0, 0.1886, -0.6341, -0.156, 0.149, -0.5438, -0.156, 0.149, -0.5438, 0, 0.1886, -0.6341, 0, 0.364, -0.6341, 0, 0, 0, 0, -0.1062, 0.4376, 0, 0.1753, 0, 0, 0.1753, 0, 0, -0.1062, 0.4376, 0, 0.0927, 0.3802, -0.4254, -0.5549, 0, -0.3376, -0.6721, -0.2006, -0.5661, -0.1405, 0, -0.5661, -0.1405, 0, -0.3376, -0.6721, -0.2006, -0.5661, -0.1936, -0.4687, -0.3376, -0.6721, -0.2006, -0.3435, -0.4209, -0.4769, -0.5661, -0.1936, -0.4687, -0.5661, -0.1936, -0.4687, -0.3435, -0.4209, -0.4769, -0.156, 0.149, -0.5438, -0.5267, -0.4781, 0.4427, -0.4254, -0.5549, 0, -0.4724, -0.229, 0.4292, -0.4724, -0.229, 0.4292, -0.4254, -0.5549, 0, -0.5661, -0.1405, 0, 0, 0.1886, -0.6341, 0, 0, 0, 0, 0.364, -0.6341, 0, 0.364, -0.6341, 0, 0, 0, 0, 0.1753, 0, 0, -0.1062, 0.4376, -0.3435, -0.5095, 0.5278, 0, 0.0927, 0.3802, 0, 0.0927, 0.3802, -0.3435, -0.5095, 0.5278, -0.2458, -0.1871, 0.4376 )
+
+[sub_resource type="PlaneMesh" id=8]
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
 
 [node name="obs_course" type="Spatial"]
 
-[node name="Ground" type="MeshInstance" parent="."]
-transform = Transform( 90, 0, 0, 0, 90, 0, 0, 0, 90, 0.0730362, -0.0356102, -0.103504 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
-
-[node name="StaticBody" type="StaticBody" parent="Ground"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
-shape = SubResource( 2 )
-
 [node name="Cubey" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95361, 1.09145, 0 )
-mesh = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.960933, 1.07248, -4.88528 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey21" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5545, 11.8257, -8.42682 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey21"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey21/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey22" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8538, 9.698, -8.42682 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey22"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey22/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey23" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97715, 9.698, 7.63983 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey23"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey23/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey2" type="MeshInstance" parent="."]
 transform = Transform( 2.48391, 0, 0, 0, 1.53005, 0, 0, 0, 1, -1.89311, 1.09145, 6.60836 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey2/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Cubey3" type="MeshInstance" parent="."]
 transform = Transform( 2.39775, 0, 0, 0, 4.13714, 0, 0, 0, 1, 1.34157, 0.340801, -1.5887 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey3/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey6" type="MeshInstance" parent="."]
-transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 8.85581, 0.472201, -8.15468 )
-mesh = SubResource( 3 )
+transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 10.5603, 0.799334, -9.10145 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey6"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey6/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey7" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 8.85581, 4.07745, -11.0057 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey7"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey7/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45979e-05, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey8" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 6.03045, 5.72454, -11.0057 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey8"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey8/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey9" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 5.98284, 7.58401, -8.19913 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey9"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey9/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey24" type="MeshInstance" parent="."]
 transform = Transform( 1.14196, 0, 0.809898, 0.617647, 0.90558, -0.870883, -0.523877, 1.06767, 0.738667, 5.98284, 7.63411, -4.23906 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey24"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey24/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey10" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.39925, -0.0456846, 0, 0.0456846, 1.39925, 3.217, 9.31952, -8.19913 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey10"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey10/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey25" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, -0.0984964, 9.31952, -4.65423 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey25"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey25/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey26" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, -6.95344, 13.5583, -4.65423 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey26"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey26/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey27" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 7.57706, 0.323488, -4.65423 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey27"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey27/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey43" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 9.88585, 1.94619, -9.40707 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey43"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey43/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey44" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 10.727, 2.63559, -8.46202 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey44"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey44/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey45" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 10.727, 3.28453, -9.34554 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey45"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey45/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey46" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 10.727, 4.26874, -10.5724 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey46"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey46/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey28" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 16.5227, 0.323488, 7.82635 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey28"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey28/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey29" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 16.5227, 1.64138, 11.3268 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey29"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey29/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey30" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 18.1436, 3.89618, 12.1307 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey30"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey30/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey31" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 15.6353, 5.69613, 12.1307 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey31"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey31/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey32" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 15.6353, 6.75946, 14.3448 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey32"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey32/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey33" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 15.6353, 7.41678, 18.2708 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey33"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey33/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey34" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 19.7078, 7.41678, 18.2708 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey34"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey34/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey35" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 19.7078, 8.9281, 15.4315 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey35"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey35/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey36" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 19.7078, 8.9281, 11.0674 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey36"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey36/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey37" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 19.7078, 8.9281, 6.99435 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey37"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey37/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey38" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 19.7078, 8.9281, 2.35636 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey38"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey38/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey39" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 19.7078, 9.78444, -2.95696 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey39"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey39/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey40" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 15.8804, 9.78444, -5.87473 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey40"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey40/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey41" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 15.8804, 9.78444, -5.87473 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey41"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey41/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey42" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.499734, -0.0163159, 0, 0.0163159, 0.499734, 15.8804, 9.78444, -5.87473 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey42"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey42/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey11" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -3.19403, 10.0597, -8.19913 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey11"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey11/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey12" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -3.19403, 12.3841, -0.000599861 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey12"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey12/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey13" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -10.6169, 11.627, -0.000599861 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey13"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey13/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey14" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -13.3645, 13.4956, -0.000599861 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey14"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey14/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey15" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -4.23248, 8.19599, 7.14167 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey15"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey15/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey16" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 3.14806, 8.19599, 0.309932 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey16"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey16/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey17" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -11.2135, 12.0168, 7.62858 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey17"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey17/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey20" type="MeshInstance" parent="."]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -7.12869, 14.2018, 15.8688 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey20"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey20/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey4" type="MeshInstance" parent="."]
 transform = Transform( 2.813, 0, 0, 0, 6.3583, -0.905251, 0, 13.5471, 0.424878, 5.14156, 0.767778, 7.70486 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey4"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey4/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey18" type="MeshInstance" parent="."]
 transform = Transform( 2.07284, -1.88247, -0.213562, 0, 1.75778, -0.90525, 1.20521, 3.23766, 0.367305, 10.0054, 7.74772, 0.141811 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey18"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey18/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey19" type="MeshInstance" parent="."]
 transform = Transform( 0.586481, -3.63139, -0.411973, 0, 1.75778, -0.90525, 2.32492, 0.916051, 0.103924, 2.49223, 12.1718, 9.56665 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey19"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey19/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey91" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, -32.0053, 1.09145, -4.38715 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey91"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey91/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey90" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, -30.8423, 11.8257, -14.4385 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey90"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey90/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey89" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, -12.2021, 9.698, 1.31932 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey89"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey89/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey88" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, -39.2465, 9.698, -0.504715 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey88"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey88/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey87" type="MeshInstance" parent="."]
 transform = Transform( 1.89692, 0, -0.645591, 0, 1.53005, 0, 1.60359, 0, 0.763683, -33.9343, 1.09145, 2.63537 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey87"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey87/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Cubey86" type="MeshInstance" parent="."]
 transform = Transform( 1.83112, 0, -0.645591, 0, 4.13714, 0, 1.54797, 0, 0.763683, -26.1721, 0.340801, -1.53631 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey86"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey86/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey85" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -16.1947, 0.472201, -1.69951 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey85"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey85/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey84" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -14.3541, 4.07745, -3.87679 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey84"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey84/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45979e-05, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey83" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -16.5117, 5.72454, -5.70081 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey83"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey83/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey82" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -18.36, 7.58401, -3.58822 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey82"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey82/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey81" type="MeshInstance" parent="."]
 transform = Transform( 1.2103, -0.68928, 0.141629, 0.617647, 0.90558, -0.870883, 0.337161, 0.815364, 1.08697, -20.9166, 7.63411, -0.563976 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey81"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey81/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey80" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, -0.0294936, -0.903346, 0, 1.39925, -0.0456846, 0.903827, 0.0348886, 1.06859, -20.4722, 9.31952, -5.37382 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey80"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey80/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey79" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -25.2928, 9.31952, -4.80709 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey79"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey79/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey78" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -30.5278, 13.5583, -9.23258 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey78"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey78/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey77" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -19.4311, 0.323488, 0.14818 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey77"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey77/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey76" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -14.5995, 1.94619, -1.99095 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey76"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey76/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey75" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -14.5672, 2.63559, -0.726162 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey75"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey75/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey74" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -13.9968, 3.28453, -1.40089 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey74"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey74/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey73" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -13.2048, 4.26874, -2.33784 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey73"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey73/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey72" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -20.6568, 0.323488, 15.4546 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey72"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey72/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey71" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -22.9166, 1.64138, 18.1278 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey71"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey71/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey70" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -22.1977, 3.89618, 19.7882 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey70"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey70/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey69" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -24.1133, 5.69613, 18.1689 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey69"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey69/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey68" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -25.5427, 6.75946, 19.8598 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey68"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey68/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey67" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -28.0773, 7.41678, 22.858 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey67"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey67/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey66" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -24.9673, 7.41678, 25.4872 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey66"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey66/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey65" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -23.1342, 8.9281, 23.3188 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey65"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey65/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey64" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -20.3168, 8.9281, 19.986 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey64"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey64/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey63" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -17.6873, 8.9281, 16.8755 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey63"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey63/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey62" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -14.693, 8.9281, 13.3335 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey62"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey62/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey61" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -11.2628, 9.78444, 9.27584 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey61"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey61/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey60" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -12.302, 9.78444, 4.57669 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey60"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey60/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey59" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -12.302, 9.78444, 4.57669 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey59"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey59/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey58" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -12.302, 9.78444, 4.57669 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey58"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey58/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey57" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -25.3682, 10.0597, -9.51272 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey57"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey57/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey56" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -30.6611, 12.3841, -3.25164 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey56"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey56/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey55" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -36.3298, 11.627, -8.04378 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey55"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey55/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey54" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -38.4281, 13.4956, -9.81761 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey54"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey54/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey53" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -36.0652, 8.19599, 1.53238 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey53"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey53/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey52" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -26.0183, 8.19599, 1.0799 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey52"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey52/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey51" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -41.7108, 12.0168, -2.60266 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey51"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey51/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey50" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -43.9111, 14.2018, 6.32737 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey50"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey50/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey49" type="MeshInstance" parent="."]
 transform = Transform( 2.14824, -8.74587, -0.274297, 0, 6.3583, -0.905251, 1.81605, 10.3457, 0.324472, -29.2699, 0.767778, 8.01427 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey49"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey49/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey48" type="MeshInstance" parent="."]
 transform = Transform( 0.804921, -3.52782, -0.400223, 0, 1.75778, -0.90525, 2.25861, 1.25724, 0.142631, -20.6729, 7.74772, 5.37855 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey48"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey48/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey47" type="MeshInstance" parent="."]
 transform = Transform( -1.05306, -3.36463, -0.381709, 0, 1.75778, -0.90525, 2.15413, -1.64482, -0.186601, -32.4952, 12.1718, 7.7257 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey47"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey47/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey136" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, -17.905, 1.09145, -32.3563 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey136"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey136/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey135" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, -16.742, 11.8257, -42.4076 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey135"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey135/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey134" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, 1.89817, 9.698, -26.6498 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey134"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey134/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey133" type="MeshInstance" parent="."]
 transform = Transform( 0.763683, 0, -0.645591, 0, 1, 0, 0.645591, 0, 0.763683, -25.1462, 9.698, -28.4739 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey133"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey133/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Cubey132" type="MeshInstance" parent="."]
 transform = Transform( 1.89692, 0, -0.645591, 0, 1.53005, 0, 1.60359, 0, 0.763683, -19.8341, 1.09145, -25.3338 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey132"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey132/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Cubey131" type="MeshInstance" parent="."]
 transform = Transform( 1.83112, 0, -0.645591, 0, 4.13714, 0, 1.54797, 0, 0.763683, -12.0718, 0.340801, -29.5055 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey131"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey131/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey130" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -2.0944, 0.472201, -29.6687 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey130"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey130/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey129" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -0.253812, 4.07745, -31.8459 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey129"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey129/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45979e-05, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey128" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -2.41149, 5.72454, -33.67 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey128"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey128/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey127" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -4.25975, 7.58401, -31.5574 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey127"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey127/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey126" type="MeshInstance" parent="."]
 transform = Transform( 1.2103, -0.68928, 0.141629, 0.617647, 0.90558, -0.870883, 0.337161, 0.815364, 1.08697, -6.81634, 7.63411, -28.5331 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey126"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey126/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey125" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, -0.0294936, -0.903346, 0, 1.39925, -0.0456846, 0.903827, 0.0348886, 1.06859, -6.37197, 9.31952, -33.343 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey125"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey125/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey124" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -11.1925, 9.31952, -32.7762 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey124"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey124/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey123" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -16.4275, 13.5583, -37.2017 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey123"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey123/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey122" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -5.33082, 0.323488, -27.821 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey122"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey122/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey121" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -0.499248, 1.94619, -29.9601 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey121"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey121/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey120" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -0.466959, 2.63559, -28.6953 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey120"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey120/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey119" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, 0.103435, 3.28453, -29.37 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey119"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey119/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey118" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, 0.895495, 4.26874, -30.307 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey118"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey118/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey117" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -6.55652, 0.323488, -12.5145 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey117"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey117/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey116" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -8.81637, 1.64138, -9.8413 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey116"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey116/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey115" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -8.09749, 3.89618, -8.18096 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey115"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey115/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey114" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -10.013, 5.69613, -9.8003 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey114"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey114/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey113" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -11.4425, 6.75946, -8.10938 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey113"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey113/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey112" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -13.9771, 7.41678, -5.11114 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey112"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey112/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey111" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -10.867, 7.41678, -2.48199 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey111"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey111/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey110" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -9.03399, 8.9281, -4.65032 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey110"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey110/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey109" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -6.21656, 8.9281, -7.98312 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey109"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey109/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey108" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -3.58701, 8.9281, -11.0937 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey108"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey108/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey107" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, -0.592765, 8.9281, -14.6356 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey107"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey107/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey106" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, 2.83747, 9.78444, -18.6933 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey106"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey106/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey105" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, 1.79828, 9.78444, -23.3925 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey105"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey105/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey104" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, 1.79828, 9.78444, -23.3925 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey104"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey104/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey103" type="MeshInstance" parent="."]
 transform = Transform( 0.381842, -0.0105334, -0.322624, 0, 0.499734, -0.0163159, 0.322796, 0.0124602, 0.381638, 1.79828, 9.78444, -23.3925 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey103"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey103/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey102" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -11.268, 10.0597, -37.4819 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey102"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey102/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey101" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -16.5609, 12.3841, -31.2208 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey101"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey101/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey100" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -22.2296, 11.627, -36.0129 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey100"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey100/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey99" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -24.3279, 13.4956, -37.7868 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey99"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey99/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey98" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -21.9649, 8.19599, -26.4368 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey98"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey98/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey97" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -11.918, 8.19599, -26.8893 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey97"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey97/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey96" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -27.6105, 12.0168, -30.5718 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey96"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey96/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey95" type="MeshInstance" parent="."]
 transform = Transform( 1.06916, 0, -0.903827, 0, 1.4, 0, 0.903827, 0, 1.06916, -29.8108, 14.2018, -21.6418 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey95"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey95/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey94" type="MeshInstance" parent="."]
 transform = Transform( 2.14824, -8.74587, -0.274297, 0, 6.3583, -0.905251, 1.81605, 10.3457, 0.324472, -15.1697, 0.767778, -19.9549 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey94"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey94/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey93" type="MeshInstance" parent="."]
 transform = Transform( 0.804921, -3.52782, -0.400223, 0, 1.75778, -0.90525, 2.25861, 1.25724, 0.142631, -6.57262, 7.74772, -22.5906 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey93"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey93/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey92" type="MeshInstance" parent="."]
 transform = Transform( -1.05306, -3.36463, -0.381709, 0, 1.75778, -0.90525, 2.15413, -1.64482, -0.186601, -18.3949, 12.1718, -20.2435 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey92"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey92/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cubey5" type="MeshInstance" parent="."]
 transform = Transform( 2.398, 0, 0, 0, 13.9034, -0.763255, 0, 16.4245, 0.646097, 10.8416, 1.78081, 7.72047 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Cubey5"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cubey5/StaticBody"]
-shape = SubResource( 6 )
+transform = Transform( 1, 0, 0, 0, 1, 3.72529e-09, 0, 9.53674e-07, 1, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="med rock7" type="MeshInstance" parent="."]
+transform = Transform( -4.99756, 0, -0.156181, 0, 5, 0, 0.156181, 0, -4.99756, 36.1833, 0.507877, -16.8598 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="med rock7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="med rock7/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0256538, 0.365002, 0 )
+shape = SubResource( 5 )
+
+[node name="med rock12" type="MeshInstance" parent="."]
+transform = Transform( 4.97415, -0.0686751, 0.50315, -0.0687743, -4.99953, -0.00248343, 0.503136, -0.00445017, -4.97462, 30.7393, 1.89015, -3.54774 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="med rock12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="med rock12/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0.21343, 0.00295258, -0.156588 )
+mesh = SubResource( 8 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.452662, -0.849578, 0.270768, -0.699645, 0.526659, 0.482833, -0.552806, 0.0291186, -0.832801, 12.3974, 156.03, -189.706 )
+light_energy = 0.69
+shadow_enabled = true

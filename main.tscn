@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
-[ext_resource path="res://levels/obstacle_course/obstacle_course.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/obstacle_course/ob_new.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/menus/main_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/materials/shaders/misc/blur.shader" type="Shader" id=4]
 [ext_resource path="res://ui/menus/esc_menu.tscn" type="PackedScene" id=5]
@@ -32,7 +32,7 @@ __meta__ = {
 visible = false
 material = SubResource( 1 )
 
-[node name="obs_course" parent="." instance=ExtResource( 2 )]
+[node name="obs_course2" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.0636265, 0, 0.997974, 0, 1, 0, -0.997974, 0, 0.0636265, 17.8525, 4.71775, -0.024663 )

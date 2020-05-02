@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/small rock.obj-f6f48e3f74856294bbcc1efacfc64ebc.mesh"
+
+[deps]
+
+files=[ "res://.import/small rock.obj-f6f48e3f74856294bbcc1efacfc64ebc.mesh" ]
+
+source_file="res://levels/obstacle_course/materials/small rock.obj"
+dest_files=[ "res://.import/small rock.obj-f6f48e3f74856294bbcc1efacfc64ebc.mesh", "res://.import/small rock.obj-f6f48e3f74856294bbcc1efacfc64ebc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

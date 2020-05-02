@@ -1,0 +1,810 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://levels/obstacle_course/materials/vector-seamless-black-white-geometric-random-shapes-grid-pattern-abstract-background-75093403.png" type="Texture" id=1]
+[ext_resource path="res://levels/obstacle_course/materials/asd.png" type="Texture" id=2]
+[ext_resource path="res://levels/obstacle_course/materials/med rock.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://levels/obstacle_course/materials/small rock.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://levels/obstacle_course/materials/rock.tres" type="Material" id=6]
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( 0, 0.3681, -0.0065, 0.3127, 0.3654, 0.0126, 0, 0.3647, 0.2867, 0, 0.3647, 0.2867, 0.3127, 0.3654, 0.0126, 0.1526, 0.3558, 0.3332, 0.1526, 0.3558, 0.3332, 0.156, -0.1695, 0.5278, 0, 0.3647, 0.2867, 0, 0.3647, 0.2867, 0.156, -0.1695, 0.5278, 0, 0.0927, 0.3802, 0.3684, -0.6399, 0, 0.2566, -0.6382, 0, 0.3743, -0.6399, 0.516, 0.3743, -0.6399, 0.516, 0.2566, -0.6382, 0, 0.2625, -0.6382, 0.516, 0.3743, 0.1441, 0, 0.5661, -0.1405, 0, 0.3743, 0.0614, 0.3802, 0.3743, 0.0614, 0.3802, 0.5661, -0.1405, 0, 0.5661, -0.229, 0.5278, 0.1238, 0.3753, -0.2913, 0.156, -0.1341, -0.4687, 0.3743, 0.0496, -0.3802, 0.3743, 0.0496, -0.3802, 0.156, -0.1341, -0.4687, 0.5661, -0.1936, -0.4687, 0.3743, 0.0496, -0.3802, 0.5661, -0.1936, -0.4687, 0.3743, 0.1441, 0, 0.3743, 0.1441, 0, 0.5661, -0.1936, -0.4687, 0.5661, -0.1405, 0, 0.3743, -0.634, -0.4215, 0.2625, -0.6323, -0.4215, 0.3684, -0.6399, 0, 0.3684, -0.6399, 0, 0.2625, -0.6323, -0.4215, 0.2566, -0.6382, 0, 0, 0.3668, -0.2823, 0.1238, 0.3753, -0.2913, 0, 0.3681, -0.0065, 0, 0.3681, -0.0065, 0.1238, 0.3753, -0.2913, 0.3127, 0.3654, 0.0126, 0.6399, -0.4722, -0.4215, 0.3743, -0.634, -0.4215, 0.6399, -0.5549, 0, 0.6399, -0.5549, 0, 0.3743, -0.634, -0.4215, 0.3684, -0.6399, 0, 0.3435, -0.4209, -0.5691, 0.2625, -0.6323, -0.4215, 0.6399, -0.4722, -0.4215, 0.6399, -0.4722, -0.4215, 0.2625, -0.6323, -0.4215, 0.3743, -0.634, -0.4215, 0.6399, -0.5549, 0, 0.3684, -0.6399, 0, 0.6399, -0.4781, 0.516, 0.6399, -0.4781, 0.516, 0.3684, -0.6399, 0, 0.3743, -0.6399, 0.516, 0.3435, -0.5095, 0.5278, 0.2625, -0.6382, 0.516, 0, -0.0885, 0.5278, 0, -0.0885, 0.5278, 0.2625, -0.6382, 0.516, 0, -0.634, 0.516, 0.6399, -0.4781, 0.516, 0.3743, -0.6399, 0.516, 0.3435, -0.5095, 0.5278, 0.3435, -0.5095, 0.5278, 0.3743, -0.6399, 0.516, 0.2625, -0.6382, 0.516, 0, -0.0944, -0.3802, 0, -0.6281, -0.4215, 0.3435, -0.4209, -0.5691, 0.3435, -0.4209, -0.5691, 0, -0.6281, -0.4215, 0.2625, -0.6323, -0.4215, 0.1238, 0.3753, -0.2913, 0.3743, 0.0496, -0.3802, 0.3127, 0.3654, 0.0126, 0.3127, 0.3654, 0.0126, 0.3743, 0.0496, -0.3802, 0.3743, 0.1441, 0, 0.2625, -0.6323, -0.4215, 0, -0.6281, -0.4215, 0.2566, -0.6382, 0, 0.2566, -0.6382, 0, 0, -0.6281, -0.4215, 0, -0.634, 0, 0, 0.3668, -0.2823, 0, 0.0809, -0.3802, 0.1238, 0.3753, -0.2913, 0.1238, 0.3753, -0.2913, 0, 0.0809, -0.3802, 0.156, -0.1341, -0.4687, 0.2566, -0.6382, 0, 0, -0.634, 0, 0.2625, -0.6382, 0.516, 0.2625, -0.6382, 0.516, 0, -0.634, 0, 0, -0.634, 0.516, 0.3743, 0.0614, 0.3802, 0.5661, -0.229, 0.5278, 0.1526, 0.3558, 0.3332, 0.1526, 0.3558, 0.3332, 0.5661, -0.229, 0.5278, 0.156, -0.1695, 0.5278, 0.3127, 0.3654, 0.0126, 0.3743, 0.1441, 0, 0.1526, 0.3558, 0.3332, 0.1526, 0.3558, 0.3332, 0.3743, 0.1441, 0, 0.3743, 0.0614, 0.3802, 0.5661, -0.229, 0.5278, 0.6399, -0.4781, 0.516, 0.156, -0.1695, 0.5278, 0.156, -0.1695, 0.5278, 0.6399, -0.4781, 0.516, 0.3435, -0.5095, 0.5278, 0, 0.0809, -0.3802, 0, -0.0944, -0.3802, 0.156, -0.1341, -0.4687, 0.156, -0.1341, -0.4687, 0, -0.0944, -0.3802, 0.3435, -0.4209, -0.5691, 0.5661, -0.1936, -0.4687, 0.6399, -0.4722, -0.4215, 0.5661, -0.1405, 0, 0.5661, -0.1405, 0, 0.6399, -0.4722, -0.4215, 0.6399, -0.5549, 0, 0.156, -0.1341, -0.4687, 0.3435, -0.4209, -0.5691, 0.5661, -0.1936, -0.4687, 0.5661, -0.1936, -0.4687, 0.3435, -0.4209, -0.5691, 0.6399, -0.4722, -0.4215, 0.5661, -0.1405, 0, 0.6399, -0.5549, 0, 0.5661, -0.229, 0.5278, 0.5661, -0.229, 0.5278, 0.6399, -0.5549, 0, 0.6399, -0.4781, 0.516, 0.156, -0.1695, 0.5278, 0.3435, -0.5095, 0.5278, 0, 0.0927, 0.3802, 0, 0.0927, 0.3802, 0.3435, -0.5095, 0.5278, 0, -0.0885, 0.5278, -0.1526, 0.3558, 0.3332, -0.3127, 0.3654, 0.0126, 0, 0.3647, 0.2867, 0, 0.3647, 0.2867, -0.3127, 0.3654, 0.0126, 0, 0.3681, -0.0065, 0, 0.0927, 0.3802, -0.156, -0.1695, 0.5278, 0, 0.3647, 0.2867, 0, 0.3647, 0.2867, -0.156, -0.1695, 0.5278, -0.1526, 0.3558, 0.3332, 0, 0.0809, -0.3802, 0, 0.1753, 0, 0, 0.3668, -0.2823, 0, 0.3668, -0.2823, 0, 0.1753, 0, 0, 0.3681, -0.0065, -0.2625, -0.6382, 0.516, -0.2566, -0.6382, 0, -0.3743, -0.6399, 0.516, -0.3743, -0.6399, 0.516, -0.2566, -0.6382, 0, -0.3684, -0.6399, 0, -0.5661, -0.229, 0.5278, -0.5661, -0.1405, 0, -0.3743, 0.0614, 0.3802, -0.3743, 0.0614, 0.3802, -0.5661, -0.1405, 0, -0.3743, 0.1441, 0, -0.5661, -0.1936, -0.4687, -0.156, -0.1341, -0.4687, -0.3743, 0.0496, -0.3802, -0.3743, 0.0496, -0.3802, -0.156, -0.1341, -0.4687, -0.1238, 0.3753, -0.2913, -0.5661, -0.1405, 0, -0.5661, -0.1936, -0.4687, -0.3743, 0.1441, 0, -0.3743, 0.1441, 0, -0.5661, -0.1936, -0.4687, -0.3743, 0.0496, -0.3802, -0.2566, -0.6382, 0, -0.2625, -0.6323, -0.4215, -0.3684, -0.6399, 0, -0.3684, -0.6399, 0, -0.2625, -0.6323, -0.4215, -0.3743, -0.634, -0.4215, 0, 0.1753, 0, 0, 0.0927, 0.3802, 0, 0.3681, -0.0065, 0, 0.3681, -0.0065, 0, 0.0927, 0.3802, 0, 0.3647, 0.2867, -0.3127, 0.3654, 0.0126, -0.1238, 0.3753, -0.2913, 0, 0.3681, -0.0065, 0, 0.3681, -0.0065, -0.1238, 0.3753, -0.2913, 0, 0.3668, -0.2823, 0, -0.634, 0, 0, -0.634, 0.516, 0, 0, 0, 0, 0, 0, 0, -0.634, 0.516, 0, -0.0885, 0.5278, -0.3684, -0.6399, 0, -0.3743, -0.634, -0.4215, -0.6399, -0.5549, 0, -0.6399, -0.5549, 0, -0.3743, -0.634, -0.4215, -0.6399, -0.4722, -0.4215, -0.3743, -0.634, -0.4215, -0.2625, -0.6323, -0.4215, -0.6399, -0.4722, -0.4215, -0.6399, -0.4722, -0.4215, -0.2625, -0.6323, -0.4215, -0.3435, -0.4209, -0.5691, -0.3743, -0.6399, 0.516, -0.3684, -0.6399, 0, -0.6399, -0.4781, 0.516, -0.6399, -0.4781, 0.516, -0.3684, -0.6399, 0, -0.6399, -0.5549, 0, 0, -0.6281, -0.4215, 0, -0.634, 0, 0, -0.0944, -0.3802, 0, -0.0944, -0.3802, 0, -0.634, 0, 0, 0, 0, 0, -0.634, 0.516, -0.2625, -0.6382, 0.516, 0, -0.0885, 0.5278, 0, -0.0885, 0.5278, -0.2625, -0.6382, 0.516, -0.3435, -0.5095, 0.5278, -0.2625, -0.6382, 0.516, -0.3743, -0.6399, 0.516, -0.3435, -0.5095, 0.5278, -0.3435, -0.5095, 0.5278, -0.3743, -0.6399, 0.516, -0.6399, -0.4781, 0.516, -0.2625, -0.6323, -0.4215, 0, -0.6281, -0.4215, -0.3435, -0.4209, -0.5691, -0.3435, -0.4209, -0.5691, 0, -0.6281, -0.4215, 0, -0.0944, -0.3802, -0.3743, 0.1441, 0, -0.3743, 0.0496, -0.3802, -0.3127, 0.3654, 0.0126, -0.3127, 0.3654, 0.0126, -0.3743, 0.0496, -0.3802, -0.1238, 0.3753, -0.2913, 0, -0.634, 0, 0, -0.6281, -0.4215, -0.2566, -0.6382, 0, -0.2566, -0.6382, 0, 0, -0.6281, -0.4215, -0.2625, -0.6323, -0.4215, -0.156, -0.1341, -0.4687, 0, 0.0809, -0.3802, -0.1238, 0.3753, -0.2913, -0.1238, 0.3753, -0.2913, 0, 0.0809, -0.3802, 0, 0.3668, -0.2823, 0, -0.634, 0.516, 0, -0.634, 0, -0.2625, -0.6382, 0.516, -0.2625, -0.6382, 0.516, 0, -0.634, 0, -0.2566, -0.6382, 0, -0.156, -0.1695, 0.5278, -0.5661, -0.229, 0.5278, -0.1526, 0.3558, 0.3332, -0.1526, 0.3558, 0.3332, -0.5661, -0.229, 0.5278, -0.3743, 0.0614, 0.3802, -0.3743, 0.0614, 0.3802, -0.3743, 0.1441, 0, -0.1526, 0.3558, 0.3332, -0.1526, 0.3558, 0.3332, -0.3743, 0.1441, 0, -0.3127, 0.3654, 0.0126, -0.3435, -0.5095, 0.5278, -0.6399, -0.4781, 0.516, -0.156, -0.1695, 0.5278, -0.156, -0.1695, 0.5278, -0.6399, -0.4781, 0.516, -0.5661, -0.229, 0.5278, -0.3435, -0.4209, -0.5691, 0, -0.0944, -0.3802, -0.156, -0.1341, -0.4687, -0.156, -0.1341, -0.4687, 0, -0.0944, -0.3802, 0, 0.0809, -0.3802, 0, 0, 0, 0, -0.0885, 0.5278, 0, 0.1753, 0, 0, 0.1753, 0, 0, -0.0885, 0.5278, 0, 0.0927, 0.3802, -0.6399, -0.5549, 0, -0.6399, -0.4722, -0.4215, -0.5661, -0.1405, 0, -0.5661, -0.1405, 0, -0.6399, -0.4722, -0.4215, -0.5661, -0.1936, -0.4687, -0.6399, -0.4722, -0.4215, -0.3435, -0.4209, -0.5691, -0.5661, -0.1936, -0.4687, -0.5661, -0.1936, -0.4687, -0.3435, -0.4209, -0.5691, -0.156, -0.1341, -0.4687, -0.6399, -0.4781, 0.516, -0.6399, -0.5549, 0, -0.5661, -0.229, 0.5278, -0.5661, -0.229, 0.5278, -0.6399, -0.5549, 0, -0.5661, -0.1405, 0, 0, -0.0944, -0.3802, 0, 0, 0, 0, 0.0809, -0.3802, 0, 0.0809, -0.3802, 0, 0, 0, 0, 0.1753, 0, 0, -0.0885, 0.5278, -0.3435, -0.5095, 0.5278, 0, 0.0927, 0.3802, 0, 0.0927, 0.3802, -0.3435, -0.5095, 0.5278, -0.156, -0.1695, 0.5278 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 0, 1.3123, -0.0065, 0.3127, 1.3096, 0.0126, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, 0.3127, 1.3096, 0.0126, 0.1526, 1.3, 0.3332, 0.1526, 1.3, 0.3332, 0.2458, -0.1871, 0.4376, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, 0.2458, -0.1871, 0.4376, 0, 0.0927, 0.3802, 0.3684, -0.6399, 0, 0.2566, -0.6382, 0, 0.3743, -0.6399, 0.516, 0.3743, -0.6399, 0.516, 0.2566, -0.6382, 0, 0.2625, -0.6382, 0.516, 0.3743, 0.4089, 0, 0.5661, -0.1405, 0, 0.3975, 0.3836, 0.2175, 0.3975, 0.3836, 0.2175, 0.5661, -0.1405, 0, 0.4724, -0.229, 0.4292, 0.1238, 1.3196, -0.2913, 0.156, 0.149, -0.5438, 0.3402, 0.9028, -0.263, 0.3402, 0.9028, -0.263, 0.156, 0.149, -0.5438, 0.5661, -0.1936, -0.4687, 0.3402, 0.9028, -0.263, 0.5661, -0.1936, -0.4687, 0.3743, 0.4089, 0, 0.3743, 0.4089, 0, 0.5661, -0.1936, -0.4687, 0.5661, -0.1405, 0, 0.3743, -0.634, -0.3294, 0.2625, -0.6323, -0.4215, 0.3684, -0.6399, 0, 0.3684, -0.6399, 0, 0.2625, -0.6323, -0.4215, 0.2566, -0.6382, 0, 0, 1.311, -0.2823, 0.1238, 1.3196, -0.2913, 0, 1.3123, -0.0065, 0, 1.3123, -0.0065, 0.1238, 1.3196, -0.2913, 0.3127, 1.3096, 0.0126, 0.3376, -0.6721, -0.2006, 0.3743, -0.634, -0.3294, 0.4254, -0.5549, 0, 0.4254, -0.5549, 0, 0.3743, -0.634, -0.3294, 0.3684, -0.6399, 0, 0.3435, -0.4209, -0.4769, 0.2625, -0.6323, -0.4215, 0.3376, -0.6721, -0.2006, 0.3376, -0.6721, -0.2006, 0.2625, -0.6323, -0.4215, 0.3743, -0.634, -0.3294, 0.4254, -0.5549, 0, 0.3684, -0.6399, 0, 0.5267, -0.4781, 0.4427, 0.5267, -0.4781, 0.4427, 0.3684, -0.6399, 0, 0.3743, -0.6399, 0.516, 0.3435, -0.5095, 0.5278, 0.2625, -0.6382, 0.516, 0, -0.1062, 0.4376, 0, -0.1062, 0.4376, 0.2625, -0.6382, 0.516, 0, -0.634, 0.516, 0.5267, -0.4781, 0.4427, 0.3743, -0.6399, 0.516, 0.3435, -0.5095, 0.5278, 0.3435, -0.5095, 0.5278, 0.3743, -0.6399, 0.516, 0.2625, -0.6382, 0.516, 0, 0.1886, -0.6341, 0, -0.6281, -0.3294, 0.3435, -0.4209, -0.4769, 0.3435, -0.4209, -0.4769, 0, -0.6281, -0.3294, 0.2625, -0.6323, -0.4215, 0.1238, 1.3196, -0.2913, 0.3402, 0.9028, -0.263, 0.3127, 1.3096, 0.0126, 0.3127, 1.3096, 0.0126, 0.3402, 0.9028, -0.263, 0.3743, 0.4089, 0, 0.2625, -0.6323, -0.4215, 0, -0.6281, -0.3294, 0.2566, -0.6382, 0, 0.2566, -0.6382, 0, 0, -0.6281, -0.3294, 0, -0.634, 0, 0, 1.311, -0.2823, 0, 0.364, -0.6341, 0.1238, 1.3196, -0.2913, 0.1238, 1.3196, -0.2913, 0, 0.364, -0.6341, 0.156, 0.149, -0.5438, 0.2566, -0.6382, 0, 0, -0.634, 0, 0.2625, -0.6382, 0.516, 0.2625, -0.6382, 0.516, 0, -0.634, 0, 0, -0.634, 0.516, 0.3975, 0.3836, 0.2175, 0.4724, -0.229, 0.4292, 0.1526, 1.3, 0.3332, 0.1526, 1.3, 0.3332, 0.4724, -0.229, 0.4292, 0.2458, -0.1871, 0.4376, 0.3127, 1.3096, 0.0126, 0.3743, 0.4089, 0, 0.1526, 1.3, 0.3332, 0.1526, 1.3, 0.3332, 0.3743, 0.4089, 0, 0.3975, 0.3836, 0.2175, 0.4724, -0.229, 0.4292, 0.5267, -0.4781, 0.4427, 0.2458, -0.1871, 0.4376, 0.2458, -0.1871, 0.4376, 0.5267, -0.4781, 0.4427, 0.3435, -0.5095, 0.5278, 0, 0.364, -0.6341, 0, 0.1886, -0.6341, 0.156, 0.149, -0.5438, 0.156, 0.149, -0.5438, 0, 0.1886, -0.6341, 0.3435, -0.4209, -0.4769, 0.5661, -0.1936, -0.4687, 0.3376, -0.6721, -0.2006, 0.5661, -0.1405, 0, 0.5661, -0.1405, 0, 0.3376, -0.6721, -0.2006, 0.4254, -0.5549, 0, 0.156, 0.149, -0.5438, 0.3435, -0.4209, -0.4769, 0.5661, -0.1936, -0.4687, 0.5661, -0.1936, -0.4687, 0.3435, -0.4209, -0.4769, 0.3376, -0.6721, -0.2006, 0.5661, -0.1405, 0, 0.4254, -0.5549, 0, 0.4724, -0.229, 0.4292, 0.4724, -0.229, 0.4292, 0.4254, -0.5549, 0, 0.5267, -0.4781, 0.4427, 0.2458, -0.1871, 0.4376, 0.3435, -0.5095, 0.5278, 0, 0.0927, 0.3802, 0, 0.0927, 0.3802, 0.3435, -0.5095, 0.5278, 0, -0.1062, 0.4376, -0.1526, 1.3, 0.3332, -0.3127, 1.3096, 0.0126, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, -0.3127, 1.3096, 0.0126, 0, 1.3123, -0.0065, 0, 0.0927, 0.3802, -0.2458, -0.1871, 0.4376, 0, 1.3089, 0.2867, 0, 1.3089, 0.2867, -0.2458, -0.1871, 0.4376, -0.1526, 1.3, 0.3332, 0, 0.364, -0.6341, 0, 0.1753, 0, 0, 1.311, -0.2823, 0, 1.311, -0.2823, 0, 0.1753, 0, 0, 1.3123, -0.0065, -0.2625, -0.6382, 0.516, -0.2566, -0.6382, 0, -0.3743, -0.6399, 0.516, -0.3743, -0.6399, 0.516, -0.2566, -0.6382, 0, -0.3684, -0.6399, 0, -0.4724, -0.229, 0.4292, -0.5661, -0.1405, 0, -0.3975, 0.3836, 0.2175, -0.3975, 0.3836, 0.2175, -0.5661, -0.1405, 0, -0.3743, 0.4089, 0, -0.5661, -0.1936, -0.4687, -0.156, 0.149, -0.5438, -0.3402, 0.9028, -0.263, -0.3402, 0.9028, -0.263, -0.156, 0.149, -0.5438, -0.1238, 1.3196, -0.2913, -0.5661, -0.1405, 0, -0.5661, -0.1936, -0.4687, -0.3743, 0.4089, 0, -0.3743, 0.4089, 0, -0.5661, -0.1936, -0.4687, -0.3402, 0.9028, -0.263, -0.2566, -0.6382, 0, -0.2625, -0.6323, -0.4215, -0.3684, -0.6399, 0, -0.3684, -0.6399, 0, -0.2625, -0.6323, -0.4215, -0.3743, -0.634, -0.3294, 0, 0.1753, 0, 0, 0.0927, 0.3802, 0, 1.3123, -0.0065, 0, 1.3123, -0.0065, 0, 0.0927, 0.3802, 0, 1.3089, 0.2867, -0.3127, 1.3096, 0.0126, -0.1238, 1.3196, -0.2913, 0, 1.3123, -0.0065, 0, 1.3123, -0.0065, -0.1238, 1.3196, -0.2913, 0, 1.311, -0.2823, 0, -0.634, 0, 0, -0.634, 0.516, 0, 0, 0, 0, 0, 0, 0, -0.634, 0.516, 0, -0.1062, 0.4376, -0.3684, -0.6399, 0, -0.3743, -0.634, -0.3294, -0.4254, -0.5549, 0, -0.4254, -0.5549, 0, -0.3743, -0.634, -0.3294, -0.3376, -0.6721, -0.2006, -0.3743, -0.634, -0.3294, -0.2625, -0.6323, -0.4215, -0.3376, -0.6721, -0.2006, -0.3376, -0.6721, -0.2006, -0.2625, -0.6323, -0.4215, -0.3435, -0.4209, -0.4769, -0.3743, -0.6399, 0.516, -0.3684, -0.6399, 0, -0.5267, -0.4781, 0.4427, -0.5267, -0.4781, 0.4427, -0.3684, -0.6399, 0, -0.4254, -0.5549, 0, 0, -0.6281, -0.3294, 0, -0.634, 0, 0, 0.1886, -0.6341, 0, 0.1886, -0.6341, 0, -0.634, 0, 0, 0, 0, 0, -0.634, 0.516, -0.2625, -0.6382, 0.516, 0, -0.1062, 0.4376, 0, -0.1062, 0.4376, -0.2625, -0.6382, 0.516, -0.3435, -0.5095, 0.5278, -0.2625, -0.6382, 0.516, -0.3743, -0.6399, 0.516, -0.3435, -0.5095, 0.5278, -0.3435, -0.5095, 0.5278, -0.3743, -0.6399, 0.516, -0.5267, -0.4781, 0.4427, -0.2625, -0.6323, -0.4215, 0, -0.6281, -0.3294, -0.3435, -0.4209, -0.4769, -0.3435, -0.4209, -0.4769, 0, -0.6281, -0.3294, 0, 0.1886, -0.6341, -0.3743, 0.4089, 0, -0.3402, 0.9028, -0.263, -0.3127, 1.3096, 0.0126, -0.3127, 1.3096, 0.0126, -0.3402, 0.9028, -0.263, -0.1238, 1.3196, -0.2913, 0, -0.634, 0, 0, -0.6281, -0.3294, -0.2566, -0.6382, 0, -0.2566, -0.6382, 0, 0, -0.6281, -0.3294, -0.2625, -0.6323, -0.4215, -0.156, 0.149, -0.5438, 0, 0.364, -0.6341, -0.1238, 1.3196, -0.2913, -0.1238, 1.3196, -0.2913, 0, 0.364, -0.6341, 0, 1.311, -0.2823, 0, -0.634, 0.516, 0, -0.634, 0, -0.2625, -0.6382, 0.516, -0.2625, -0.6382, 0.516, 0, -0.634, 0, -0.2566, -0.6382, 0, -0.2458, -0.1871, 0.4376, -0.4724, -0.229, 0.4292, -0.1526, 1.3, 0.3332, -0.1526, 1.3, 0.3332, -0.4724, -0.229, 0.4292, -0.3975, 0.3836, 0.2175, -0.3975, 0.3836, 0.2175, -0.3743, 0.4089, 0, -0.1526, 1.3, 0.3332, -0.1526, 1.3, 0.3332, -0.3743, 0.4089, 0, -0.3127, 1.3096, 0.0126, -0.3435, -0.5095, 0.5278, -0.5267, -0.4781, 0.4427, -0.2458, -0.1871, 0.4376, -0.2458, -0.1871, 0.4376, -0.5267, -0.4781, 0.4427, -0.4724, -0.229, 0.4292, -0.3435, -0.4209, -0.4769, 0, 0.1886, -0.6341, -0.156, 0.149, -0.5438, -0.156, 0.149, -0.5438, 0, 0.1886, -0.6341, 0, 0.364, -0.6341, 0, 0, 0, 0, -0.1062, 0.4376, 0, 0.1753, 0, 0, 0.1753, 0, 0, -0.1062, 0.4376, 0, 0.0927, 0.3802, -0.4254, -0.5549, 0, -0.3376, -0.6721, -0.2006, -0.5661, -0.1405, 0, -0.5661, -0.1405, 0, -0.3376, -0.6721, -0.2006, -0.5661, -0.1936, -0.4687, -0.3376, -0.6721, -0.2006, -0.3435, -0.4209, -0.4769, -0.5661, -0.1936, -0.4687, -0.5661, -0.1936, -0.4687, -0.3435, -0.4209, -0.4769, -0.156, 0.149, -0.5438, -0.5267, -0.4781, 0.4427, -0.4254, -0.5549, 0, -0.4724, -0.229, 0.4292, -0.4724, -0.229, 0.4292, -0.4254, -0.5549, 0, -0.5661, -0.1405, 0, 0, 0.1886, -0.6341, 0, 0, 0, 0, 0.364, -0.6341, 0, 0.364, -0.6341, 0, 0, 0, 0, 0.1753, 0, 0, -0.1062, 0.4376, -0.3435, -0.5095, 0.5278, 0, 0.0927, 0.3802, 0, 0.0927, 0.3802, -0.3435, -0.5095, 0.5278, -0.2458, -0.1871, 0.4376 )
+
+[sub_resource type="PlaneMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.0588235, 0.521569, 0.239216, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 0.03
+roughness_texture = ExtResource( 1 )
+uv1_scale = Vector3( 300, 300, 300 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[node name="obs_course" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.452662, -0.849578, 0.270768, -0.321074, 0.438587, 0.839377, -0.831871, 0.293017, -0.471309, 12.3974, 138.23, -124.686 )
+light_energy = 1.21
+light_indirect_energy = 1.17
+shadow_enabled = true
+
+[node name="RockSMalll" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22532, 0.713821, 0 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll7" type="MeshInstance" parent="."]
+transform = Transform( 2.86043, 0, 0.904414, 0, 3, 0, -0.904414, 0, 2.86043, -14.0456, 0.713821, 5.31611 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll7/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll8" type="MeshInstance" parent="."]
+transform = Transform( -0.969516, 2.83247, -0.19269, -2.77814, -0.988479, -0.552152, -0.584809, 0, 2.94245, -11.7838, 0.098434, 6.06464 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll8/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll17" type="MeshInstance" parent="."]
+transform = Transform( -2.50825, 1.16109, 1.16643, -1.62639, -2.07431, -1.43251, 0.25209, -1.83006, 2.36376, -17.0614, 4.69971, 5.28578 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll17"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll17/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll18" type="MeshInstance" parent="."]
+transform = Transform( -2.50825, 1.16109, 1.16643, -1.62639, -2.07431, -1.43251, 0.25209, -1.83006, 2.36376, -19.0301, 3.17377, 6.43687 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll18"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll18/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll19" type="MeshInstance" parent="."]
+transform = Transform( -2.50825, 1.16109, 1.16643, -1.62639, -2.07431, -1.43251, 0.25209, -1.83006, 2.36376, -16.7347, 3.17377, 24.3194 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll19"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll19/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll20" type="MeshInstance" parent="."]
+transform = Transform( 0.46234, 2.36747, 1.78363, -2.95342, 0.214408, 0.480974, 0.25209, -1.83006, 2.36376, -18.084, 4.74798, 24.3194 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll20"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll20/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll21" type="MeshInstance" parent="."]
+transform = Transform( 0.46234, 2.36747, 1.78363, -2.95342, 0.214408, 0.480974, 0.25209, -1.83006, 2.36376, -22.5664, 4.74798, 17.8442 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll21"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll21/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll22" type="MeshInstance" parent="."]
+transform = Transform( 0.46234, 2.36747, 1.78363, -2.95342, 0.214408, 0.480974, 0.25209, -1.83006, 2.36376, -24.6535, 6.0017, 17.8442 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll22"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll22/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll23" type="MeshInstance" parent="."]
+transform = Transform( 0.46234, 2.36747, 1.78363, -2.95342, 0.214408, 0.480974, 0.25209, -1.83006, 2.36376, -24.6535, 6.0017, 17.8442 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll23"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll23/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll9" type="MeshInstance" parent="."]
+transform = Transform( -0.21943, 1.9053, -2.30688, -2.77814, -0.988479, -0.552152, -1.11077, 2.09588, 1.8367, -10.6292, -0.159758, 8.08214 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll9/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll10" type="MeshInstance" parent="."]
+transform = Transform( 0.385977, 2.94398, -0.428931, -2.87863, 0.260333, -0.803553, -0.751327, 0.514962, 2.85838, -8.53804, -0.159758, 8.73345 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll10/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll11" type="MeshInstance" parent="."]
+transform = Transform( 0.385977, 2.94398, -0.428931, -2.87863, 0.260333, -0.803553, -0.751327, 0.514962, 2.85838, -6.82327, -0.964355, 9.57297 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll11/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll12" type="MeshInstance" parent="."]
+transform = Transform( 0.385977, 2.94398, -0.428931, -2.87863, 0.260333, -0.803553, -0.751327, 0.514962, 2.85838, -6.82327, -0.964355, 9.57297 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll12/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll6" type="MeshInstance" parent="."]
+transform = Transform( 2.72393, 0, -1.25707, 0, 3, 0, 1.25707, 0, 2.72393, 7.4863, 1.7908, 5.966 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll6/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll13" type="MeshInstance" parent="."]
+transform = Transform( 2.72393, 0, -1.25707, 0, 3, 0, 1.25707, 0, 2.72393, -6.31813, -1.05131, 7.97336 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll13/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll15" type="MeshInstance" parent="."]
+transform = Transform( 2.72393, 0, -1.25707, 0, 3, 0, 1.25707, 0, 2.72393, -7.86849, -1.05131, 7.97336 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll15"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll15/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll16" type="MeshInstance" parent="."]
+transform = Transform( 2.97527, 0, 0.384414, 0, 3, 0, -0.384414, 0, 2.97527, -9.1166, -1.05131, 7.97336 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll16/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll14" type="MeshInstance" parent="."]
+transform = Transform( 2.72393, 0, -1.25707, 0, 3, 0, 1.25707, 0, 2.72393, -6.39925, -0.934054, 9.6139 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll14"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll14/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll2" type="MeshInstance" parent="."]
+transform = Transform( 11.432, 0, -16.4106, 0, 20, 0, 16.4106, 0, 11.432, 2.96303, -6.76273, 17.5515 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll2/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll3" type="MeshInstance" parent="."]
+transform = Transform( 19.9624, 0, 1.22655, 0, 20, 0, -1.22655, 0, 19.9624, -1.53333, -6.76273, 12.6738 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll3/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll4" type="MeshInstance" parent="."]
+transform = Transform( 19.9624, 0, 1.22655, 0, 20, 0, -1.22655, 0, 19.9624, -1.53333, -6.47559, 3.42954 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll4/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockSMalll5" type="MeshInstance" parent="."]
+transform = Transform( -0.0303696, 0, -20, -0.641821, 19.9897, 0.000974595, 19.9897, 0.641822, -0.030354, 4.54557, -6.48678, 7.54251 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockSMalll5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockSMalll5/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="RockMed" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73422, 0, 0 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed50" type="MeshInstance" parent="."]
+transform = Transform( 1.52983, 0, 3.69589, 0, 4, 0, -3.69589, 0, 1.52983, -1.73422, -1.27586, 9.92507 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed50"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed50/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed52" type="MeshInstance" parent="."]
+transform = Transform( 1.52983, 0, 3.69589, 0, 4, 0, -3.69589, 0, 1.52983, -26.4272, 3.29774, 11.9523 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed52"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed52/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed53" type="MeshInstance" parent="."]
+transform = Transform( 1.52983, 0, 3.69589, 0, 4, 0, -3.69589, 0, 1.52983, -21.3878, 4.53307, 8.59816 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed53"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed53/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed2" type="MeshInstance" parent="."]
+transform = Transform( -38.8057, 0, -9.70125, 0, 40, 0, 9.70125, 0, -38.8057, 81.4401, -15.5511, 4.75482 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed5" type="MeshInstance" parent="."]
+transform = Transform( -36.3854, 0, -16.6163, 0, 40, 0, 16.6163, 0, -36.3854, 82.9464, -28.6082, 65.686 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed6" type="MeshInstance" parent="."]
+transform = Transform( -36.3854, 0, -16.6163, 0, 40, 0, 16.6163, 0, -36.3854, 92.3577, -28.6082, 103.332 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed6/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed7" type="MeshInstance" parent="."]
+transform = Transform( -28.5403, 0, -28.0259, 0, 40, 0, 28.0259, 0, -28.5403, 68.4098, -18.2689, 109.319 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed7/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed8" type="MeshInstance" parent="."]
+transform = Transform( -17.9728, 0, -35.7349, 0, 40, 0, 35.7349, 0, -17.9728, 52.32, -18.2689, 113.341 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed8/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed9" type="MeshInstance" parent="."]
+transform = Transform( -13.3259, 0, -37.715, 0, 40, 0, 37.715, 0, -13.3259, 45.588, -18.2689, 119.157 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed9/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed10" type="MeshInstance" parent="."]
+transform = Transform( -13.3259, 0, -37.715, 0, 40, 0, 37.715, 0, -13.3259, 29.9175, -18.2689, 123.075 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed10/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed11" type="MeshInstance" parent="."]
+transform = Transform( -8.09987, 0, -39.1713, 0, 40, 0, 39.1713, 0, -8.09987, 45.2928, -36.1664, 101.85 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed11/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed12" type="MeshInstance" parent="."]
+transform = Transform( -13.3259, 0, -37.715, 0, 40, 0, 37.715, 0, -13.3259, 35.7738, -47.0246, 104.23 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed12/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed13" type="MeshInstance" parent="."]
+transform = Transform( -8.46118, 0, -39.0949, 0, 40, 0, 39.0949, 0, -8.46118, 72.12, -47.0246, 82.628 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed13/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed14" type="MeshInstance" parent="."]
+transform = Transform( -32.5061, 0, -23.3099, 0, 40, 0, 23.3099, 0, -32.5061, 85.5425, -47.0246, 53.5619 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed14"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed14/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed51" type="MeshInstance" parent="."]
+transform = Transform( -7.07239, 0, -39.3698, 0, 40, 0, 39.3698, 0, -7.07239, -18.3144, -47.0386, 16.4773 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed51"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed51/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed23" type="MeshInstance" parent="."]
+transform = Transform( -32.5061, 0, -23.3099, 0, 40, 0, 23.3099, 0, -32.5061, -57.6578, -47.0246, 89.3614 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed23"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed23/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed24" type="MeshInstance" parent="."]
+transform = Transform( 4.85121, 0, -39.7047, 0, 40, 0, 39.7047, 0, 4.85121, -18.1111, -47.0246, 112.133 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed24"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed24/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed25" type="MeshInstance" parent="."]
+transform = Transform( -32.5061, 0, -23.3099, 0, 40, 0, 23.3099, 0, -32.5061, -82.1459, -47.0246, 55.1525 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed25"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed25/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed3" type="MeshInstance" parent="."]
+transform = Transform( -59.9403, 0, -2.67574, 0, 60, 0, 2.67574, 0, -59.9403, 108.041, -23.4269, 31.0101 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed15" type="MeshInstance" parent="."]
+transform = Transform( -59.9403, 0, -2.67574, 0, 60, 0, 2.67574, 0, -59.9403, 3.26854, -23.4269, 133.062 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed15"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed15/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed16" type="MeshInstance" parent="."]
+transform = Transform( -43.6728, 0, -41.1422, 0, 60, 0, 41.1422, 0, -43.6728, -18.744, -43.0213, 138.565 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed16/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed17" type="MeshInstance" parent="."]
+transform = Transform( -53.3626, 0, -27.4305, 0, 60, 0, 27.4305, 0, -53.3626, -30.3128, -58.615, 125.441 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed17"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed17/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed18" type="MeshInstance" parent="."]
+transform = Transform( -53.3626, 0, -27.4305, 0, 60, 0, 27.4305, 0, -53.3626, -58.3908, 18.9441, 132.46 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed18"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed18/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed19" type="MeshInstance" parent="."]
+transform = Transform( -53.7989, 0, -26.5646, 0, 60, 0, 26.5646, 0, -53.7989, -81.2048, -54.7872, 78.2085 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed19"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed19/StaticBody"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="RockMed21" type="MeshInstance" parent="."]
+transform = Transform( -24.3142, 0, -54.8527, 0, 60, 0, 54.8527, 0, -24.3142, -104.882, -54.7872, 53.1972 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed21"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed21/StaticBody"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="RockMed22" type="MeshInstance" parent="."]
+transform = Transform( -24.3142, 0, -54.8527, 0, 60, 0, 54.8527, 0, -24.3142, -104.882, -54.7872, 53.1972 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed22"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed22/StaticBody"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="RockMed20" type="MeshInstance" parent="."]
+transform = Transform( -39.7658, 0, 44.9297, 0, 60, 0, -44.9297, 0, -39.7658, -74.0816, 3.61404, 106.702 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed20"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed20/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed4" type="MeshInstance" parent="."]
+transform = Transform( -32.8529, 0, -50.2064, 0, 60, 0, 50.2064, 0, -32.8529, 101.697, -23.4269, 71.5698 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed49" type="MeshInstance" parent="."]
+transform = Transform( 39.4358, 0, 6.69485, 0, 40, 0, -6.69485, 0, 39.4358, -83.18, -4.9462, 23.0442 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed49"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed49/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed48" type="MeshInstance" parent="."]
+transform = Transform( 37.5532, 0, 13.7752, 0, 40, 0, -13.7752, 0, 37.5532, -80.0061, -18.0033, -37.8229 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed48"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed48/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed47" type="MeshInstance" parent="."]
+transform = Transform( 37.5532, 0, 13.7752, 0, 40, 0, -13.7752, 0, 37.5532, -86.5009, -18.0033, -76.0802 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed47"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed47/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed46" type="MeshInstance" parent="."]
+transform = Transform( 30.6067, 0, 25.7532, 0, 40, 0, -25.7532, 0, 30.6067, -62.1642, -7.66403, -80.2117 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed46"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed46/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed45" type="MeshInstance" parent="."]
+transform = Transform( 20.6619, 0, 34.2503, 0, 40, 0, -34.2503, 0, 20.6619, -45.8132, -7.66403, -82.9875 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed45"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed45/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed44" type="MeshInstance" parent="."]
+transform = Transform( 16.1808, 0, 36.5812, 0, 40, 0, -36.5812, 0, 16.1808, -38.6548, -7.66403, -88.2697 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed44"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed44/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed43" type="MeshInstance" parent="."]
+transform = Transform( 16.1808, 0, 36.5812, 0, 40, 0, -36.5812, 0, 16.1808, -22.7298, -7.66403, -90.9732 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed43"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed43/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed42" type="MeshInstance" parent="."]
+transform = Transform( 11.0818, 0, 38.4343, 0, 40, 0, -38.4343, 0, 11.0818, -39.6885, -25.5616, -70.9912 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed42"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed42/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed41" type="MeshInstance" parent="."]
+transform = Transform( 16.1808, 0, 36.5812, 0, 40, 0, -36.5812, 0, 16.1808, -30.0149, -36.4197, -72.6334 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed41"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed41/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed40" type="MeshInstance" parent="."]
+transform = Transform( 11.4362, 0, 38.3303, 0, 40, 0, -38.3303, 0, 11.4362, -67.9116, -36.4197, -53.8841 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed40"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed40/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed39" type="MeshInstance" parent="."]
+transform = Transform( 34.199, 0, 20.7468, 0, 40, 0, -20.7468, 0, 34.199, -83.5249, -36.4197, -25.9338 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed39"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed39/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed38" type="MeshInstance" parent="."]
+transform = Transform( 34.199, 0, 20.7468, 0, 40, 0, -20.7468, 0, 34.199, 62.0003, -36.4197, -50.639 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed38"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed38/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed37" type="MeshInstance" parent="."]
+transform = Transform( -1.79012, 0, 39.9599, 0, 40, 0, -39.9599, 0, -1.79012, 24.3175, -36.4197, -76.378 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed37"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed37/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed36" type="MeshInstance" parent="."]
+transform = Transform( 34.199, 0, 20.7468, 0, 40, 0, -20.7468, 0, 34.199, 83.7911, -36.4197, -14.6519 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed36"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed36/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed35" type="MeshInstance" parent="."]
+transform = Transform( 59.9689, 0, -1.93174, 0, 60, 0, 1.93174, 0, 59.9689, -107.687, -12.822, -5.17483 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed35"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed35/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed34" type="MeshInstance" parent="."]
+transform = Transform( 59.9689, 0, -1.93174, 0, 60, 0, 1.93174, 0, 59.9689, 4.60691, -12.822, -98.8856 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed34"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed34/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed33" type="MeshInstance" parent="."]
+transform = Transform( 46.7012, 0, 37.6696, 0, 60, 0, -37.6696, 0, 46.7012, 26.9768, -32.4165, -102.683 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed33"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed33/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed32" type="MeshInstance" parent="."]
+transform = Transform( 55.3102, 0, 23.2548, 0, 60, 0, -23.2548, 0, 55.3102, 37.5045, -48.0102, -88.7107 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed32"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed32/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed31" type="MeshInstance" parent="."]
+transform = Transform( 55.3102, 0, 23.2548, 0, 60, 0, -23.2548, 0, 55.3102, 66.0383, 29.549, -93.5548 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed31"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed31/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed30" type="MeshInstance" parent="."]
+transform = Transform( 55.6788, 0, 22.3579, 0, 60, 0, -22.3579, 0, 55.6788, 84.622, -44.1824, -37.7121 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed30"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed30/StaticBody"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="RockMed29" type="MeshInstance" parent="."]
+transform = Transform( 28.4517, 0, 52.8252, 0, 60, 0, -52.8252, 0, 28.4517, 106.31, -44.1824, -10.9576 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed29"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed29/StaticBody"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="RockMed28" type="MeshInstance" parent="."]
+transform = Transform( 28.4517, 0, 52.8252, 0, 60, 0, -52.8252, 0, 28.4517, 106.31, -44.1824, -10.9576 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed28"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed28/StaticBody"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="RockMed27" type="MeshInstance" parent="."]
+transform = Transform( 36.2008, 0, -47.8487, 0, 60, 0, 47.8487, 0, 36.2008, 79.7063, 14.2189, -66.6679 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed27"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed27/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RockMed26" type="MeshInstance" parent="."]
+transform = Transform( 36.6087, 0, 47.5374, 0, 60, 0, -47.5374, 0, 36.6087, -98.2495, -12.822, -45.1281 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="RockMed26"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RockMed26/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Floor" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 14.3277 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 6 )
