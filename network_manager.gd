@@ -12,16 +12,16 @@ onready var spawnable = {
 	'bullet': preload("res://weapons/ammo/bullet.tscn"),
 }
 
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
 
 func _physics_process(delta):
 	var p = {}
-#	var c = 0
-#	while p != null && c < MAX_PACKETS:
-	p = steam_controller._read_P2P_Packet()
-	_process_packet_update(p)
-#		c += 1
+	var c = 0
+	while p != null && c < MAX_PACKETS:
+		p = steam_controller._read_P2P_Packet()
+		_process_packet_update(p)
+		c += 1
 
 func _process_packet_update(data):
 	#manager for directing packets to the correct methods for interpritation
