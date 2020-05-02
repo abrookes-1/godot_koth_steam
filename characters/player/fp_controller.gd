@@ -60,10 +60,10 @@ func _physics_process(delta):
 		network_manager.send_position(self)
 		#attempt to send game state info less often then delta
 		timer += delta
-		if timer > .1:
-			network_manager.send_game_state(self)
-			current_money += 1
-			timer = 0
+#		if timer > .1:
+#			network_manager.send_game_state(self)
+#			current_money += 1
+#			timer = 0
 
 func _input(event):
 	#accepts mouse movment and turns the camera respectivly
