@@ -100,7 +100,6 @@ func _do_spawn_directive(data):
 		id_counter = data['net_id'] + 1
 	new_player.spawn_params = data['params']
 	get_tree().get_root().add_child(new_player)
-	print('------do spawn directive')
 	# push to networked objects
 	add_networked_node(new_player)
 
@@ -114,7 +113,6 @@ func spawn_new_networked(type, transform, params={}):
 	new_player.net_id = get_new_id()
 	new_player.spawn_params = params
 	get_tree().get_root().add_child(new_player)
-	print('------do spawn networked')
 	var network_id = new_player.net_id
 	# push to networked objects
 	add_networked_node(new_player)
