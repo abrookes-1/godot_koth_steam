@@ -1,14 +1,15 @@
 extends KinematicBody
 
-var BULLET_SPEED = 100
+var BULLET_SPEED = 60
 var BULLET_DAMAGE = 15
 const KILL_TIMER = 6
 var timer = 0
 var hit_something = false
+var stuck = false
 
 # physics
 var velocity = Vector3()
-var gravity = -9.8 * 0.01
+var gravity = -9.8 * 0.04
 
 # needed to make networked
 var spawn_params
@@ -23,10 +24,18 @@ func _physics_process(delta):
 	timer += delta
 	if timer >= KILL_TIMER:
 		queue_free()
+	if !stuck:
+		stuckreeeeeeeeeeee(delta)
+
+func stuckreeeeeeeeeeee(delta):
 	
 	velocity.y += gravity
 	
 	var collision = move_and_collide(velocity * delta)
+
+	if collision:
+			stuck = true
+
 	
 #	if collision:
 #		velocity = Vector3.ZERO
@@ -35,15 +44,14 @@ func _physics_process(delta):
 #		if collided_with.is_in_group('shootable'):
 #			print('ded')
 	
-	if network_manager.is_host:
-		pass
+#	if network_manager.is_host:
+#		pass
 		# detect and report collision
 	
 	
-func collided(body):
-	if hit_something == false:
-		if body.has_method("bullet_hit"):
-			body.bullet_hit(BULLET_DAMAGE, global_transform)
-
-	hit_something = true
-	queue_free()
+#func collided(body):
+#	if hit_something == false:
+#		if body.has_method("bullet_hit"):
+#			body.bullet_hit(BULLET_DAMAGE, global_transform)
+#	hit_something = true
+#	queue_free()

@@ -51,6 +51,7 @@ script = ExtResource( 6 )
 
 [node name="SniperMesh" type="MeshInstance" parent="Head/Camera/Sniper"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.468544, -0.986977, -3.08701 )
+visible = false
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null

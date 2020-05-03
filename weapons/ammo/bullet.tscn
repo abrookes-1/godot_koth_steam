@@ -1,19 +1,23 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://weapons/ammo/bullet.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://weapons/ammo/nerf.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://weapons/ammo/bullet.gd" type="Script" id=2]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="CylinderShape" id=1]
+radius = 0.675832
+height = 5.84052
 
 [node name="bullet" type="KinematicBody"]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+transform = Transform( -0.2, 0, -6.51683e-08, 0, 0.2, 0, 6.51683e-08, 0, -0.2, 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="bullet" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+transform = Transform( -0.2, 0, -3.48393e-05, 0, 0.2, 0, 3.48393e-05, 0, -0.2, 0.0114835, 0, 0.339564 )
 mesh = ExtResource( 1 )
 material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+transform = Transform( 0.2, 3.49283e-05, -1.52677e-12, 0, -8.74228e-09, -0.2, -3.49283e-05, 0.2, -8.74228e-09, 0.0097339, -0.00256546, -0.00130836 )
 shape = SubResource( 1 )
