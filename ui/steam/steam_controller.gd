@@ -11,6 +11,7 @@ var DATA
 var LOBBY_INVITE_ARG = false
 var packets_read = 0
 var packets_sent = 0
+var MEMBERS
 
 onready var network_manager = $"/root/NetworkManager"
 
@@ -153,7 +154,7 @@ func _get_Lobby_Members():
 	LOBBY_MEMBERS.clear()
 
 	# Get the number of members from this lobby from Steam
-	var MEMBERS = Steam.getNumLobbyMembers(STEAM_LOBBY_ID)
+	MEMBERS = Steam.getNumLobbyMembers(STEAM_LOBBY_ID)
 
 
 	# Get the data of these players from Steam

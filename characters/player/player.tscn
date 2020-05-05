@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://characters/player/fp_controller.gd" type="Script" id=1]
+[ext_resource path="res://weapons/knife/knife2.dae" type="PackedScene" id=2]
 [ext_resource path="res://weapons/sniper.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://characters/player/char.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://characters/player/Hand.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://weapons/sniper.gd" type="Script" id=6]
 
 [sub_resource type="CylinderShape" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.827451, 0.843137, 0.65098, 1 )
 
 [sub_resource type="CapsuleMesh" id=2]
 
@@ -46,7 +51,7 @@ material/14 = null
 material/15 = null
 
 [node name="Sniper" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217395, 0, 0.602738 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451673, 0, 0.602738 )
 script = ExtResource( 6 )
 
 [node name="SniperMesh" type="MeshInstance" parent="Head/Camera/Sniper"]
@@ -62,7 +67,20 @@ material/5 = null
 material/6 = null
 
 [node name="Firepoint" type="Spatial" parent="Head/Camera/Sniper"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.59319 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.438858, -0.0659025, -3.33657 )
+
+[node name="Knife" parent="Head/Camera" instance=ExtResource( 2 )]
+transform = Transform( -0.0878203, 0.0456758, -0.0141889, 0.0314981, 0.0775558, 0.054708, 0.0359926, 0.0435755, -0.0824967, 0.992784, -0.822074, -0.408205 )
+
+[node name="Hand" type="MeshInstance" parent="Head/Camera"]
+transform = Transform( -0.0684671, -0.0135213, -0.07162, -0.026634, 0.0961098, 0.00731674, 0.0678445, 0.0240849, -0.0694049, 0.950956, -0.741004, -0.581741 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 3 )
+
+[node name="Hand2" type="MeshInstance" parent="Head/Camera"]
+transform = Transform( -0.078717, -0.0173077, -0.0591953, -0.026634, 0.0961098, 0.00731674, 0.0556261, 0.0215256, -0.0802645, -0.221785, -0.623394, -0.581741 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 3 )
 
 [node name="CapsuleMesh" type="MeshInstance" parent="."]
 transform = Transform( 0.636302, 0, 0, 0, -1.71564e-07, -1.05305, 0, 0.554667, -9.03669e-08, 0, 0, 0 )

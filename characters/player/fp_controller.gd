@@ -9,6 +9,7 @@ var input_direction = Vector3()
 
 const FLY_SPEED = 40
 const FLY_ACCEL = 4
+var timer = 0
 
 var gravity = -9.8 * 3
 const MAX_SPEED = 15
@@ -19,8 +20,6 @@ const AIR_ACCEL = 1
 const AIR_DECEL = DECEL
 var jump_height = 12
 var temp = 0
-
-var timer = 0
 var current_money = 0
 
 var spawn_params # set on spawn, do stuff with it in ready
@@ -54,17 +53,20 @@ func _process(delta):
 	if is_owner:
 		_walk(delta)
 	_do_gravity(delta)
+	
+	timer += delta
+	if timer > 5:
+		network_manager.send_game_state(self)
+		current_money += 5
+		timer = 0
+		print(current_money)
 
 func _physics_process(delta):
 	# send position with the frequency of _physics_process
 	if is_owner:
 		network_manager.send_position(self)
 		#attempt to send game state info less often then delta
-		timer += delta
-#		if timer > .1:
-#			network_manager.send_game_state(self)
-#			current_money += 1
-#			timer = 0
+
 
 func _input(event):
 	#accepts mouse movment and turns the camera respectivly
@@ -215,9 +217,4 @@ func set_rotation(q):
 
 func get_rotation():
 	return Quat($'Head/Camera'.global_transform.basis)
-
-func generate_game_state():
-	#generates a json of the current state of the game in the cleints eyes
-	pass
-
 

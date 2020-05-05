@@ -3,9 +3,12 @@ extends KinematicBody
 var BULLET_SPEED = 60
 var BULLET_DAMAGE = 15
 const KILL_TIMER = 6
+const STUCK_KILL_TIMER = 10
 var timer = 0
+var stuck_timer = 0
 var hit_something = false
 var stuck = false
+
 
 # physics
 var velocity = Vector3()
@@ -16,16 +19,25 @@ var spawn_params
 var net_id
 
 onready var network_manager = $"/root/NetworkManager"
+onready var game_state = $"/root/GameStateManager"
+onready var bullet = "res://weapons/sniper.gd"
 
 func _ready():
+
 	velocity = -transform.basis.z * BULLET_SPEED
+#	if game_state.get_bullet_count() > 19:
+#		kill_bullet()
 
 func _physics_process(delta):
 	timer += delta
-	if timer >= KILL_TIMER:
-		queue_free()
+	if timer >= KILL_TIMER and !stuck:
+		kill_bullet()
 	if !stuck:
 		stuckreeeeeeeeeeee(delta)
+	else:
+		stuck_timer += delta
+		if stuck_timer >= STUCK_KILL_TIMER:
+			kill_bullet()
 
 func stuckreeeeeeeeeeee(delta):
 	
@@ -34,24 +46,8 @@ func stuckreeeeeeeeeeee(delta):
 	var collision = move_and_collide(velocity * delta)
 
 	if collision:
-			stuck = true
+		stuck = true
+#		print(game_state.get_bullet_id())
 
-	
-#	if collision:
-#		velocity = Vector3.ZERO
-#		var collided_with = collision.collider as StaticBody
-#
-#		if collided_with.is_in_group('shootable'):
-#			print('ded')
-	
-#	if network_manager.is_host:
-#		pass
-		# detect and report collision
-	
-	
-#func collided(body):
-#	if hit_something == false:
-#		if body.has_method("bullet_hit"):
-#			body.bullet_hit(BULLET_DAMAGE, global_transform)
-#	hit_something = true
-#	queue_free()
+func kill_bullet():
+	queue_free()

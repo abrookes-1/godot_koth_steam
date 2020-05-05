@@ -12,12 +12,12 @@ transform = Transform( -0.2, 0, -6.51683e-08, 0, 0.2, 0, 6.51683e-08, 0, -0.2, 0
 script = ExtResource( 2 )
 
 [node name="bullet" type="MeshInstance" parent="."]
-transform = Transform( -0.2, 0, -3.48393e-05, 0, 0.2, 0, 3.48393e-05, 0, -0.2, 0.0114835, 0, 0.339564 )
+transform = Transform( -0.1, 0, -1.74197e-05, 0, 0.1, 0, 1.74197e-05, 0, -0.1, 0.0114835, 0, 0.339564 )
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.2, 3.49283e-05, -1.52677e-12, 0, -8.74228e-09, -0.2, -3.49283e-05, 0.2, -8.74228e-09, 0.0097339, -0.00256546, -0.00130836 )
+transform = Transform( 0.1, 1.74641e-05, -7.63382e-13, 0, -4.37114e-09, -0.1, -1.74641e-05, 0.1, -4.37114e-09, 0.00973382, -0.00256546, 0.232519 )
 shape = SubResource( 1 )

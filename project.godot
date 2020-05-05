@@ -21,9 +21,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-NetworkManager="*res://network_manager.gd"
+NetworkManager="*res://global/network_manager.gd"
 SteamController="*res://ui/steam/steam_controller.gd"
-MoneyManager="*res://ui/economy/money/money_manager.gd"
+GameStateManager="*res://global/game_state_manager.gd"
 
 [display]
 
