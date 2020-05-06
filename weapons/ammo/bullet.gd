@@ -40,11 +40,8 @@ func _physics_process(delta):
 			kill_bullet()
 
 func stuckreeeeeeeeeeee(delta):
-	
 	velocity.y += gravity
-	
 	var collision = move_and_collide(velocity * delta)
-
 	if collision:
 		stuck = true
 #		print(game_state.get_bullet_id())

@@ -104,7 +104,7 @@ func _do_spawn_directive(data):
 	add_networked_node(new_player)
 
 func _do_game_state_check(data):
-	pass
+	print(str(data['steam_id']) + ' ' + str(data['current_money']))
 
 func spawn_new_networked(type, transform, params={}):
 	# spawn new object

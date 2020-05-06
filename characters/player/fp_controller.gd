@@ -59,7 +59,7 @@ func _process(delta):
 		network_manager.send_game_state(self)
 		current_money += 5
 		timer = 0
-		print(current_money)
+		print(str(steam_id) + ' ' + str(current_money))
 
 func _physics_process(delta):
 	# send position with the frequency of _physics_process
