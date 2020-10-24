@@ -29,7 +29,6 @@ var steam_name
 var is_owner
 var has_contact = false
 
-
 const MAX_SLOPE_ANGLE = 35
 
 onready var network_manager = $"/root/NetworkManager"
